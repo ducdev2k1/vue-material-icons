@@ -1,0 +1,20 @@
+import type { IIconProps } from '@/utils/useIconRender';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'NotesIcon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        'M3 18h12v-2H3zM3 6v2h18V6zm0 7h18v-2H3z',
+        props,
+        attrs
+      );
+  },
+});

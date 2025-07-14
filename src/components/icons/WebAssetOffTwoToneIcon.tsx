@@ -1,0 +1,20 @@
+import type { IIconProps } from '@/utils/useIconRender';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'WebAssetOffTwoToneIcon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        'M20 17.17V8h-9.17zM5.17 8H4v10h11.17z',
+        props,
+        attrs
+      );
+  },
+});

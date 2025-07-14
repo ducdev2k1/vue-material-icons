@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import { HomeIcon } from '@/components/icons';
+</script>
 
 <template>
   <main>
-    <Home />
+    <HomeIcon />
   </main>
 </template>
