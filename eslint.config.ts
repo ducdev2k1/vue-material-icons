@@ -24,5 +24,24 @@ export default defineConfigWithVueTs(
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },
+  {
+    // https://eslint.org/docs/latest/use/configure/ignore
+    ignores: [
+      // only ignore node_modules in the same directory
+      // as the configuration file
+      'node_modules',
+      // so you have to add `**/` pattern to include nested directories
+      // for example, if you use pnpm workspace
+      '**/node_modules',
+      'src/**.d.ts',
+      '**.d.ts',
+    ],
+  },
+  {
+    rules: {
+      'vue/no-v-html': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
   skipFormatting,
 );
