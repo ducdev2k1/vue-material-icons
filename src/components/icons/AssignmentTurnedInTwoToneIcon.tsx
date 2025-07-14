@@ -9,7 +9,7 @@ export default defineComponent({
     color: String,
     viewBox: String,
   },
-  setup(props: IconProps, { attrs }) {
+  setup(props: IIconProps, { attrs }) {
     return () =>
       useIconRender(
         'M5 19h14V5H5zm2.41-7.41L10 14.17l6.59-6.59L18 9l-8 8-4-4z',
