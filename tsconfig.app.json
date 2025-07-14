@@ -1,14 +1,16 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.tsx"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.tsx", "ReadFileEnv.ts"],
   "exclude": ["src/**/__tests__/*"],
-  "paths": {
-    "@/*": ["src/*"]
-  },
+
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-
     "types": ["node"],
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
 
     /* Linting */
     "strict": true,
