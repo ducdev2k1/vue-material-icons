@@ -12,9 +12,19 @@ export default defineComponent({
   setup(props: IIconProps, { attrs }) {
     return () =>
       useIconRender(
-        'M12 15c-2.7 0-5.8 1.29-6 2.01V18h12v-1c-.2-.71-3.3-2-6-2',
+        [
+          {
+            tag: 'circle',
+            props: {
+              cx: '12',
+              cy: '8',
+              r: '2',
+              opacity: '.3',
+            },
+          },
+        ],
         props,
-        attrs
+        attrs,
       );
   },
 });

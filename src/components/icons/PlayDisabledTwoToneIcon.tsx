@@ -12,9 +12,17 @@ export default defineComponent({
   setup(props: IIconProps, { attrs }) {
     return () =>
       useIconRender(
-        'M10 12.83v2.53l1.55-.99z',
+        [
+          {
+            tag: 'path',
+            props: {
+              d: 'M10 12.83v2.53l1.55-.99z',
+              opacity: '.3',
+            },
+          },
+        ],
         props,
-        attrs
+        attrs,
       );
   },
 });

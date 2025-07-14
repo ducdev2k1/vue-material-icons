@@ -12,7 +12,14 @@ export default defineComponent({
   setup(props: IIconProps, { attrs }) {
     return () =>
       useIconRender(
-        'M22 4H2v16h20zM4 6h4v12H4zm16 12h-4V6h4z',
+        [
+  {
+    'tag': 'path',
+    'props': {
+      'd': 'M22 4H2v16h20zM4 6h4v12H4zm16 12h-4V6h4z'
+    }
+  }
+],
         props,
         attrs
       );

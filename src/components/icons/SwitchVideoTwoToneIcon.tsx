@@ -12,7 +12,15 @@ export default defineComponent({
   setup(props: IIconProps, { attrs }) {
     return () =>
       useIconRender(
-        'M4 17h12V7H4zm4-8v2h4V9l3 3-3 3v-2H8v2l-3-3z',
+        [
+  {
+    'tag': 'path',
+    'props': {
+      'd': 'M4 17h12V7H4zm4-8v2h4V9l3 3-3 3v-2H8v2l-3-3z',
+      'opacity': '.3'
+    }
+  }
+],
         props,
         attrs
       );

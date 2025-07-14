@@ -12,9 +12,19 @@ export default defineComponent({
   setup(props: IIconProps, { attrs }) {
     return () =>
       useIconRender(
-        'M5 15.5h4v4H5zm7-9.66L10.07 9h3.86z',
+        [
+          {
+            tag: 'circle',
+            props: {
+              cx: '17.5',
+              cy: '17.5',
+              r: '2.5',
+              opacity: '.3',
+            },
+          },
+        ],
         props,
-        attrs
+        attrs,
       );
   },
 });

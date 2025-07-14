@@ -12,9 +12,17 @@ export default defineComponent({
   setup(props: IIconProps, { attrs }) {
     return () =>
       useIconRender(
-        'M5 17c0 .55.45 1 1 1h1v-4H5zm12-3h2v4h-2z',
+        [
+          {
+            tag: 'path',
+            props: {
+              d: 'M5 17c0 .55.45 1 1 1h1v-4H5zm12-3h2v4h-2z',
+              opacity: '.3',
+            },
+          },
+        ],
         props,
-        attrs
+        attrs,
       );
   },
 });

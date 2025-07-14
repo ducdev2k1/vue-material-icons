@@ -6,8 +6,12 @@ export interface IIconProps {
   viewBox?: string;
 }
 
+/**
+ * @param tag - tag svg nội dung chính, mặc định là 'path'
+ * @param tagProps - thuộc tính của phần tử chính SVG (d, cx, cy, r, ...)
+ */
 export const useIconRender = (
-  d: string,
+  elements: { tag: string; props: Record<string, any> }[],
   props: IIconProps = {},
   attrs: Record<string, any> = {},
 ) => {
@@ -24,6 +28,6 @@ export const useIconRender = (
       ...attrs,
       ...rest,
     },
-    [h('path', { d })],
+    elements.map(({ tag, props }) => h(tag, props)),
   );
 };

@@ -12,7 +12,16 @@ export default defineComponent({
   setup(props: IIconProps, { attrs }) {
     return () =>
       useIconRender(
-        'M12 13c.55 0 1-.45 1-1V8c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .55.45 1 1 1',
+        [
+  {
+    'tag': 'circle',
+    'props': {
+      'cx': '12',
+      'cy': '16',
+      'r': '1'
+    }
+  }
+],
         props,
         attrs
       );
