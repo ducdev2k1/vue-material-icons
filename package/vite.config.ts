@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig, loadEnv } from 'vite';
 import { readFileEnv } from './ReadFileEnv';
+import dts from 'vite-plugin-dts';
 
 const root = process.cwd();
 
@@ -16,7 +17,16 @@ const { VITE_PORT, VITE_DROP_CONSOLE, VITE_PUBLIC_PATH } = viteEnv;
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx()],
+  plugins: [vue(), vueJsx()
+
+
+    dts({
+     include: ['src/**/*.d.ts'], // Chỉ tạo .d.ts từ file .d.ts thủ công
+        exclude: ['src/**/*.tsx'], // Loại trừ tự động tạo từ .tsx nếu không cần
+        outDir: ['dist/types'],    // Thư mục output cho .d.ts
+    }),
+
+  ],
   define: {
     'process.env': {},
   },
@@ -40,10 +50,11 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.ts',
-      name: 'VMaterialIcon',
-      formats: ['es', 'umd'],
-      fileName: (format) => `v-material-icon.${format}.js`,
+      name: 'VueMaterialIcons',
+      formats: ['es', 'cjs'],
+      fileName: (format) => `vue-material-icon.${format}.js`,
     },
+    outDir: 'dist',
     rollupOptions: {
       external: ['vue'],
       output: {
@@ -53,7 +64,7 @@ export default defineConfig({
         // Đặt tên file CSS
         assetFileNames: ({ name }) => {
           if (/\.css$/.test(name ?? '')) {
-            return 'v-material-icon.css';
+            return 'vue-material-icon.css';
           }
           return '[name].[ext]';
         },

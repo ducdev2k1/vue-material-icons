@@ -2,8 +2,8 @@
   "name": "vue-material-icons",
   "version": "0.0.0",
   "private": true,
-  "main": "dist/v-material-icon.umd.js",
-  "module": "dist/v-material-icon.es.js",
+  "main": "dist/vue-material-icons.umd.js",
+  "module": "dist/vue-material-icons.es.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "vite",

@@ -2,25 +2,26 @@
   "name": "vue-material-icons",
   "version": "0.0.0",
   "private": true,
-  "main": "dist/v-material-icon.umd.js",
-  "module": "dist/v-material-icon.es.js",
+  "main": "dist/vue-material-icons.es.js",
+  "module": "dist/vue-material-icons.es.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
+    "vite-build": "vite build",
     "test:unit": "vitest",
     "build-only": "vite build && vue-tsc --emitDeclarationOnly",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "build-size": "export NODE_OPTIONS=--max-old-space-size=8192 && vite build"
   },
   "dependencies": {
+    "vite-plugin-dts": "^4.5.4",
     "vue": "^3.5.17"
   },
   "devDependencies": {
-    "pinia": "^3.0.3",
-    "vue-router": "^4.5.1",
     "@mui/icons-material": "^7.2.0",
     "@tsconfig/node22": "^22.0.2",
     "@types/jsdom": "^21.1.7",
@@ -41,11 +42,13 @@
     "jsdom": "^26.1.0",
     "npm-run-all2": "^8.0.4",
     "path": "^0.12.7",
+    "pinia": "^3.0.3",
     "prettier": "3.5.3",
     "typescript": "~5.8.0",
     "vite": "npm:rolldown-vite@latest",
     "vite-plugin-vue-devtools": "^7.7.7",
     "vitest": "^3.2.4",
+    "vue-router": "^4.5.1",
     "vue-tsc": "^2.2.12"
   },
   "files": [

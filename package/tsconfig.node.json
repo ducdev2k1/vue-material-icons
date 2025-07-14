@@ -1,27 +1,20 @@
 {
-  "extends": "@tsconfig/node22/tsconfig.json",
-  "include": [
-    "vite.config.*",
-    "vitest.config.*",
-    "cypress.config.*",
-    "nightwatch.conf.*",
-    "playwright.config.*",
-    "eslint.config.*"
-  ],
   "compilerOptions": {
-    "noEmit": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "allowSyntheticDefaultImports": true,
+    "composite": true,
     "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "types": ["node"],
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "jsx": "preserve", // để giữ JSX (Vue xử lý)
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
     "declaration": true, // xuất file .d.ts
     "emitDeclarationOnly": false, // chỉ xuất d.ts khi chạy vite-tsc
-    "declarationDir": "dist/types" // xuất vào thư mục types
-  }
+    "declarationDir": "dist/types", // xuất vào thư mục types
+    "outDir": "dist"
+  },
+  "include": [
+    "vite.config.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "ReadFileEnv.ts",
+    "env.d.ts"
+  ]
 }
