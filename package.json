@@ -1,0 +1,81 @@
+{
+  "name": "vue-material-icons",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/v-material-icon.umd.js",
+  "module": "dist/v-material-icon.es.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "build-only": "vite build && vue-tsc --emitDeclarationOnly",
+    "type-check": "vue-tsc --build",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "vue": "^3.5.17"
+  },
+  "devDependencies": {
+    "pinia": "^3.0.3",
+    "vue-router": "^4.5.1",
+    "@mui/icons-material": "^7.2.0",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/jsdom": "^21.1.7",
+    "@types/node": "^22.16.3",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vitejs/plugin-vue-jsx": "^5.0.0",
+    "@vitest/eslint-plugin": "^1.2.7",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.5.1",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.7.0",
+    "cheerio": "^1.1.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-vue": "~10.2.0",
+    "fs-extra": "^11.3.0",
+    "glob": "^11.0.3",
+    "jiti": "^2.4.2",
+    "jsdom": "^26.1.0",
+    "npm-run-all2": "^8.0.4",
+    "path": "^0.12.7",
+    "prettier": "3.5.3",
+    "typescript": "~5.8.0",
+    "vite": "npm:rolldown-vite@latest",
+    "vite-plugin-vue-devtools": "^7.7.7",
+    "vitest": "^3.2.4",
+    "vue-tsc": "^2.2.12"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "vue",
+    "material",
+    "material-icons",
+    "material icons",
+    "icons",
+    "icons",
+    "vue icons",
+    "ui",
+    "svg",
+    "svg icons",
+    "framework",
+    "frontend"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ducdev2k1/vue-material-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ducdev2k1/vue-material-icons/issues"
+  },
+  "homepage": "https://github.com/ducdev2k1/vue-material-icons#readme",
+  "author": "ducdev2k1",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
