@@ -31,9 +31,11 @@ jobs:
 
       - name: Build package
         working-directory: package
-        run: npm run vite-build
+        run: |
+          rm -rf dist 
+          npm run vite-build
 
-      - name: Publish to npm
+      - name: Publish to NPM
         working-directory: package
         run: npm publish --access public
         env:
