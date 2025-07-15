@@ -2,8 +2,8 @@
   "name": "@ducdev2k1/vue-material-icons",
   "version": "0.0.0",
   "private": true,
-  "main": "dist/vue-material-icons.cjs.js",
-  "module": "dist/vue-material-icons.es.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "vite",

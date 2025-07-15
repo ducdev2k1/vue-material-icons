@@ -78,7 +78,7 @@ export default defineConfig({
       entry: 'src/index.ts',
       name: 'VueMaterialIcons',
       formats: ['es', 'cjs'],
-      fileName: (format) => `vue-material-icons.${format}.js`,
+      fileName: (format) => `index.${format}.js`,
     },
     outDir: 'dist',
     rollupOptions: {
