@@ -99,7 +99,7 @@ export default {
           if (name.endsWith('Icon')) {
             return {
               importName: name,
-              path: 'vue-material-icons',
+              path: '@ducdev2k1/vue-material-icons',
             };
           }
         },

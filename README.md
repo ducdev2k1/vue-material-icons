@@ -22,16 +22,17 @@
 ## 📦 Installation
 
 ```bash
-npm install vue-material-icons
+npm i @ducdev2k1/vue-material-icons
 # or
-yarn add vue-material-icons
+yarn add @ducdev2k1/vue-material-icons
 ```
 
 ---
 
 ## 🚀 Usage
 
-### Create File component "MaterialIcon"
+### Create file component "MaterialIcon"
+
 ```vue
 <script setup lang="ts">
 import * as MIcons from '@ducdev2k1/vue-material-icons';
@@ -54,14 +55,17 @@ const icon = computed(() => MIcons[props.icon]);
   <component :is="icon" :size="props.size" :color="props.color" :viewBox="props.viewBox" />
 </template>
 ```
-Sử dụng <MaterinalIcon icon="HomeIcon" />
+``` vue
+<MaterinalIcon icon="HomeIcon" />
+```
 
 ### Global Registration
+
 ```ts
 // main.ts
 import { createApp } from 'vue';
 import App from './App.vue';
-import MaterialIcons from 'vue-material-icons';
+import MaterialIcons from '@ducdev2k1/vue-material-icons';
 
 const app = createApp(App);
 app.use(MaterialIcons);
@@ -71,7 +75,7 @@ app.mount('#app');
 ### Local Import
 
 ```ts
-import { HomeIcon, AddIcon } from 'vue-material-icons';
+import { HomeIcon, AddIcon } from '@ducdev2k1/vue-material-icons';
 
 export default {
   components: {
@@ -133,6 +137,8 @@ All icons follow PascalCase + `Icon` suffix naming convention.
 
 > Browse icons at: [https://fonts.google.com/icons](https://fonts.google.com/icons)
 
+---
+
 ## 📄 License
 
 MIT © [DucDev](https://github.com/ducdev2k1)
@@ -159,16 +165,17 @@ MIT © [DucDev](https://github.com/ducdev2k1)
 ## 📦 Cài đặt
 
 ```bash
-npm install vue-material-icons
+npm i @ducdev2k1/vue-material-icons
 # hoặc
-yarn add vue-material-icons
+yarn add @ducdev2k1/vue-material-icons
 ```
 
 ---
 
 ## 🚀 Cách sử dụng
 
-### Tạo File component "MaterinalIcon" 
+### Tạo file component "MaterialIcon"
+
 ```vue
 <script setup lang="ts">
 import * as MIcons from '@ducdev2k1/vue-material-icons';
@@ -191,7 +198,9 @@ const icon = computed(() => MIcons[props.icon]);
   <component :is="icon" :size="props.size" :color="props.color" :viewBox="props.viewBox" />
 </template>
 ```
-Sử dụng <MaterinalIcon icon="HomeIcon" />
+``` vue
+<MaterinalIcon icon="HomeIcon" />
+```
 
 ### Đăng ký toàn cục
 
@@ -199,7 +208,7 @@ Sử dụng <MaterinalIcon icon="HomeIcon" />
 // main.ts
 import { createApp } from 'vue';
 import App from './App.vue';
-import MaterialIcons from 'vue-material-icons';
+import MaterialIcons from '@ducdev2k1/vue-material-icons';
 
 const app = createApp(App);
 app.use(MaterialIcons);
@@ -209,7 +218,7 @@ app.mount('#app');
 ### Import từng icon
 
 ```ts
-import { HomeIcon, AddIcon } from 'vue-material-icons';
+import { HomeIcon, AddIcon } from '@ducdev2k1/vue-material-icons';
 
 export default {
   components: {
@@ -233,7 +242,7 @@ export default {
           if (name.endsWith('Icon')) {
             return {
               importName: name,
-              path: 'vue-material-icons',
+              path: '@ducdev2k1/vue-material-icons',
             };
           }
         },
@@ -270,23 +279,6 @@ Tất cả biểu tượng được đặt tên theo quy tắc PascalCase và h�
 | `add_circle_outline`   | `AddCircleOutlineIcon`  |
 
 > Xem danh sách icon tại: [https://fonts.google.com/icons](https://fonts.google.com/icons)
-
----
-
-## 🛠 Phát triển
-
-```bash
-npm install
-npm run dev
-```
-
-Để build:
-
-```bash
-npm run build
-```
-
----
 
 ## 📄 Giấy phép
 
