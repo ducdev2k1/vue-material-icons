@@ -1,6 +1,6 @@
 {
-  "include": ["src/**/*", "src/**/*.d.ts"],
-  "exclude": ["dist", "node_modules", "cypress", "src/**/__tests__/*"],
+  "include": ["src/**/*", "src/**/*.tsx"],
+  "exclude": ["dist", "node_modules", "cypress", "src/**/__tests__/*", "src/env.d.ts"],
 
   "compilerOptions": {
     "target": "ESNext",
@@ -13,7 +13,7 @@
       "@/*": ["src/*"]
     },
     "resolveJsonModule": true,
-    "types": ["node"],
+    "types": ["vite/client", "vue"],
     "allowJs": true,
     "strictNullChecks": true,
     "noImplicitThis": true,
@@ -28,7 +28,14 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    /* Build */
+    "declaration": true, // xuất file .d.ts
+    "emitDeclarationOnly": false, // chỉ xuất d.ts khi chạy vite-tsc
+    // "declarationDir": "dist/types", // xuất vào thư mục types
+    "outDir": "dist",
+    "declarationMap": false // tắt đi để giảm số lượng file
   },
 
   "references": [

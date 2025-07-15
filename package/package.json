@@ -1,8 +1,8 @@
 {
-  "name": "vue-material-icons",
+  "name": "@ducdev2k1/vue-material-icons",
   "version": "0.0.0",
   "private": true,
-  "main": "dist/vue-material-icons.es.js",
+  "main": "dist/vue-material-icons.cjs.js",
   "module": "dist/vue-material-icons.es.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
@@ -52,14 +52,14 @@
     "vue-tsc": "^2.2.12"
   },
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "keywords": [
     "vue",
     "material",
     "material-icons",
     "material icons",
-    "icons",
     "icons",
     "vue icons",
     "ui",

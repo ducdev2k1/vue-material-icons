@@ -3,8 +3,35 @@ import { fileURLToPath, URL } from 'node:url';
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import { defineConfig, loadEnv } from 'vite';
-import { readFileEnv } from './ReadFileEnv';
 import dts from 'vite-plugin-dts';
+
+export const readFileEnv = (envConf: any) => {
+  const ret: any = {};
+
+  for (const envName of Object.keys(envConf)) {
+    let realName = envConf[envName].replace(/\\n/g, '\n');
+    realName = realName === 'true' ? true : realName === 'false' ? false : realName;
+
+    if (envName === 'VITE_PORT') {
+      realName = Number(realName);
+    }
+    if (envName === 'VITE_PROXY' && realName) {
+      try {
+        realName = JSON.parse(realName.replace(/'/g, '"'));
+      } catch (e: unknown) {
+        console.error(e);
+        realName = '';
+      }
+    }
+    ret[envName] = realName;
+    if (typeof realName === 'string') {
+      process.env[envName] = realName;
+    } else if (typeof realName === 'object') {
+      process.env[envName] = JSON.stringify(realName);
+    }
+  }
+  return ret;
+};
 
 const root = process.cwd();
 
@@ -17,15 +44,14 @@ const { VITE_PORT, VITE_DROP_CONSOLE, VITE_PUBLIC_PATH } = viteEnv;
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx()
-
-
+  plugins: [
+    vue(),
+    vueJsx(),
     dts({
-     include: ['src/**/*.d.ts'], // Chỉ tạo .d.ts từ file .d.ts thủ công
-        exclude: ['src/**/*.tsx'], // Loại trừ tự động tạo từ .tsx nếu không cần
-        outDir: ['dist/types'],    // Thư mục output cho .d.ts
+      insertTypesEntry: true,
+      outDir: 'dist/types',
+      rollupTypes: true,
     }),
-
   ],
   define: {
     'process.env': {},
@@ -52,7 +78,7 @@ export default defineConfig({
       entry: 'src/index.ts',
       name: 'VueMaterialIcons',
       formats: ['es', 'cjs'],
-      fileName: (format) => `vue-material-icon.${format}.js`,
+      fileName: (format) => `vue-material-icons.${format}.js`,
     },
     outDir: 'dist',
     rollupOptions: {
@@ -71,7 +97,7 @@ export default defineConfig({
       },
     },
     cssCodeSplit: true, // tách riêng CSS
-    sourcemap: true, // Tạo sourcemap để debug
+    // sourcemap: true, // Tạo sourcemap để debug
     minify: 'esbuild', // Sử dụng esbuild để xử lý TypeScript
     target: 'esnext', // Đầu ra JS hiện đại
   },

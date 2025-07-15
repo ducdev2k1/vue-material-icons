@@ -3,18 +3,7 @@
     "composite": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowSyntheticDefaultImports": true,
-    "declaration": true, // xuất file .d.ts
-    "emitDeclarationOnly": false, // chỉ xuất d.ts khi chạy vite-tsc
-    "declarationDir": "dist/types", // xuất vào thư mục types
-    "outDir": "dist"
+    "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "vite.config.ts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "ReadFileEnv.ts",
-    "env.d.ts"
-  ]
+  "include": ["vite.config.ts"]
 }
