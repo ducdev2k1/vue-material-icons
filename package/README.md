@@ -22,9 +22,9 @@
 ## 📦 Installation
 
 ```bash
-npm install vue-material-icons
+npm i @ducdev2k1/vue-material-icons
 # or
-yarn add vue-material-icons
+yarn add @ducdev2k1/vue-material-icons
 ```
 
 ---
@@ -152,9 +152,9 @@ MIT © [DucDev](https://github.com/ducdev2k1)
 ## 📦 Cài đặt
 
 ```bash
-npm install vue-material-icons
+npm i @ducdev2k1/vue-material-icons
 # hoặc
-yarn add vue-material-icons
+yarn add @ducdev2k1/vue-material-icons
 ```
 
 ---
@@ -238,23 +238,6 @@ Tất cả biểu tượng được đặt tên theo quy tắc PascalCase và h�
 | `add_circle_outline`   | `AddCircleOutlineIcon`  |
 
 > Xem danh sách icon tại: [https://fonts.google.com/icons](https://fonts.google.com/icons)
-
----
-
-## 🛠 Phát triển
-
-```bash
-npm install
-npm run dev
-```
-
-Để build:
-
-```bash
-npm run build
-```
-
----
 
 ## 📄 Giấy phép
 
