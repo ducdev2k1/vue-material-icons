@@ -33,6 +33,7 @@ jobs:
         working-directory: package
         run: |
           rm -rf dist 
+          export NODE_OPTIONS=--max-old-space-size=8192
           npm run vite-build
 
       - name: Publish to NPM
