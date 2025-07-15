@@ -31,8 +31,32 @@ yarn add vue-material-icons
 
 ## 🚀 Usage
 
-### Global Registration
+### Create File component "MaterialIcon"
+```vue
+<script setup lang="ts">
+import * as MIcons from '@ducdev2k1/vue-material-icons';
+import { computed, defineProps } from 'vue';
 
+type IconName = keyof typeof MIcons;
+
+interface IProps {
+  icon: IconName;
+  size?: string | number;
+  color?: string;
+  viewBox?: string;
+}
+
+const props = defineProps<IProps>();
+const icon = computed(() => MIcons[props.icon]);
+</script>
+
+<template>
+  <component :is="icon" :size="props.size" :color="props.color" :viewBox="props.viewBox" />
+</template>
+```
+Sử dụng <MaterinalIcon icon="HomeIcon" />
+
+### Global Registration
 ```ts
 // main.ts
 import { createApp } from 'vue';
@@ -109,23 +133,6 @@ All icons follow PascalCase + `Icon` suffix naming convention.
 
 > Browse icons at: [https://fonts.google.com/icons](https://fonts.google.com/icons)
 
----
-
-## 🛠 Development
-
-```bash
-npm install
-npm run dev
-```
-
-To build:
-
-```bash
-npm run build
-```
-
----
-
 ## 📄 License
 
 MIT © [DucDev](https://github.com/ducdev2k1)
@@ -160,6 +167,31 @@ yarn add vue-material-icons
 ---
 
 ## 🚀 Cách sử dụng
+
+### Tạo File component "MaterinalIcon" 
+```vue
+<script setup lang="ts">
+import * as MIcons from '@ducdev2k1/vue-material-icons';
+import { computed, defineProps } from 'vue';
+
+type IconName = keyof typeof MIcons;
+
+interface IProps {
+  icon: IconName;
+  size?: string | number;
+  color?: string;
+  viewBox?: string;
+}
+
+const props = defineProps<IProps>();
+const icon = computed(() => MIcons[props.icon]);
+</script>
+
+<template>
+  <component :is="icon" :size="props.size" :color="props.color" :viewBox="props.viewBox" />
+</template>
+```
+Sử dụng <MaterinalIcon icon="HomeIcon" />
 
 ### Đăng ký toàn cục
 
