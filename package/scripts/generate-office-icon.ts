@@ -71,7 +71,9 @@ async function generateIcons() {
             default: 32,
           },
           color: String,
-          viewBox: String,
+          viewBox: {
+          type: String,
+          default: '0 0 32 32',},
         },
         setup(props: IIconProps, { attrs }) {
           return () =>
