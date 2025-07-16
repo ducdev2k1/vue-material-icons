@@ -1,38 +1,38 @@
 import type { IIconProps } from '@/utils/useIconRender';
-      import { useIconRender } from '@/utils/useIconRender';
-      import { defineComponent } from 'vue';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
 
-      export default defineComponent({
-        name: 'OfficeFolderOpenIcon',
-        props: {
-          size: {
-            type: [String, Number],
-            default: 32,
-          },
-          color: String,
-          viewBox: String,
-        },
-        setup(props: IIconProps, { attrs }) {
-          return () =>
-            useIconRender(
-              [
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M25.3334 7.99998H14.6667L12 5.33331H5.33335C3.86669 5.33331 2.66669 6.53331 2.66669 7.99998V24C2.66669 25.4666 3.86669 26.6666 5.33335 26.6666H26C27.1334 26.6666 28 25.8 28 24.6666V10.6666C28 9.19998 26.8 7.99998 25.3334 7.99998Z',
-      'fill': '#FFA000'
-    }
+export default defineComponent({
+  name: 'OfficeFolderOpenIcon',
+  props: {
+    size: {
+      type: [String, Number],
+      default: 32,
+    },
+    color: String,
+    viewBox: String,
   },
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M28.1333 12H10.2C8.93331 12 7.79998 12.9333 7.59998 14.2L5.33331 26.6667H26.4666C27.7333 26.6667 28.8666 25.7333 29.0666 24.4667L30.7333 15.1333C31.0666 13.5333 29.8 12 28.1333 12Z',
-      'fill': '#FFCA28'
-    }
-  }
-],
-              props,
-              attrs
-            );
-        },
-      });
+  setup(props: IIconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        [
+          {
+            tag: 'path',
+            props: {
+              d: 'M25.3334 7.99998H14.6667L12 5.33331H5.33335C3.86669 5.33331 2.66669 6.53331 2.66669 7.99998V24C2.66669 25.4666 3.86669 26.6666 5.33335 26.6666H26C27.1334 26.6666 28 25.8 28 24.6666V10.6666C28 9.19998 26.8 7.99998 25.3334 7.99998Z',
+              fill: '#FFA000',
+            },
+          },
+          {
+            tag: 'path',
+            props: {
+              d: 'M28.1333 12H10.2C8.93331 12 7.79998 12.9333 7.59998 14.2L5.33331 26.6667H26.4666C27.7333 26.6667 28.8666 25.7333 29.0666 24.4667L30.7333 15.1333C31.0666 13.5333 29.8 12 28.1333 12Z',
+              fill: '#FFCA28',
+            },
+          },
+        ],
+        props,
+        attrs,
+      );
+  },
+});
