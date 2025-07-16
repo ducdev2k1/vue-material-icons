@@ -1,5 +1,6 @@
 import { mount } from '@vue/test-utils';
-import * as Icons from '../icons';
+import { describe, expect, it } from 'vitest';
+import * as Icons from '../components';
 
 const SHAPE_TAGS = ['path', 'circle', 'rect', 'polygon', 'line', 'polyline', 'ellipse', 'g', 'use'];
 

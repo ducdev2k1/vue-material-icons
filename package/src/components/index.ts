@@ -900,6 +900,7 @@ export * from './OilBarrel';
 export * from './OfflineShare';
 export * from './OfflinePin';
 export * from './OfflineBolt';
+export * from './Office';
 export * from './Numbers';
 export * from './NotStarted';
 export * from './NoTransfer';
