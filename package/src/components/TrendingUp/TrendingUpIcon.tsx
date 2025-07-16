@@ -1,0 +1,27 @@
+import type { IIconProps } from '@/utils/useIconRender';
+      import { useIconRender } from '@/utils/useIconRender';
+      import { defineComponent } from 'vue';
+
+      export default defineComponent({
+        name: 'TrendingUpIcon',
+        props: {
+          size: [String, Number],
+          color: String,
+          viewBox: String,
+        },
+        setup(props: IIconProps, { attrs }) {
+          return () =>
+            useIconRender(
+              [
+  {
+    'tag': 'path',
+    'props': {
+      'd': 'm16 6 2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z'
+    }
+  }
+],
+              props,
+              attrs
+            );
+        },
+      });
