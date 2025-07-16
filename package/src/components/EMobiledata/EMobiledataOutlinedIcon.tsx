@@ -1,27 +1,27 @@
 import type { IIconProps } from '@/utils/useIconRender';
-      import { useIconRender } from '@/utils/useIconRender';
-      import { defineComponent } from 'vue';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
 
-      export default defineComponent({
-        name: 'EMobiledataOutlinedIcon',
-        props: {
-          size: [String, Number],
-          color: String,
-          viewBox: String,
-        },
-        setup(props: IIconProps, { attrs }) {
-          return () =>
-            useIconRender(
-              [
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M16 9V7H8v10h8v-2h-6v-2h6v-2h-6V9z'
-    }
-  }
-],
-              props,
-              attrs
-            );
-        },
-      });
+export default defineComponent({
+  name: 'EMobiledataOutlinedIcon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IIconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        [
+          {
+            tag: 'path',
+            props: {
+              d: 'M16 9V7H8v10h8v-2h-6v-2h6v-2h-6V9z',
+            },
+          },
+        ],
+        props,
+        attrs,
+      );
+  },
+});

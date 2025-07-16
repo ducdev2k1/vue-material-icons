@@ -1,29 +1,29 @@
 import type { IIconProps } from '@/utils/useIconRender';
-      import { useIconRender } from '@/utils/useIconRender';
-      import { defineComponent } from 'vue';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
 
-      export default defineComponent({
-        name: 'FiberSmartRecordRoundedIcon',
-        props: {
-          size: [String, Number],
-          color: String,
-          viewBox: String,
-        },
-        setup(props: IIconProps, { attrs }) {
-          return () =>
-            useIconRender(
-              [
-  {
-    'tag': 'circle',
-    'props': {
-      'cx': '9',
-      'cy': '12',
-      'r': '8'
-    }
-  }
-],
-              props,
-              attrs
-            );
-        },
-      });
+export default defineComponent({
+  name: 'FiberSmartRecordRoundedIcon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IIconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        [
+          {
+            tag: 'circle',
+            props: {
+              cx: '9',
+              cy: '12',
+              r: '8',
+            },
+          },
+        ],
+        props,
+        attrs,
+      );
+  },
+});

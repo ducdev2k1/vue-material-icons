@@ -1,27 +1,27 @@
 import type { IIconProps } from '@/utils/useIconRender';
-      import { useIconRender } from '@/utils/useIconRender';
-      import { defineComponent } from 'vue';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
 
-      export default defineComponent({
-        name: 'ExpandSharpIcon',
-        props: {
-          size: [String, Number],
-          color: String,
-          viewBox: String,
-        },
-        setup(props: IIconProps, { attrs }) {
-          return () =>
-            useIconRender(
-              [
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M4 20h16v2H4zM4 2h16v2H4zm9 7h3l-4-4-4 4h3v6H8l4 4 4-4h-3z'
-    }
-  }
-],
-              props,
-              attrs
-            );
-        },
-      });
+export default defineComponent({
+  name: 'ExpandSharpIcon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IIconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        [
+          {
+            tag: 'path',
+            props: {
+              d: 'M4 20h16v2H4zM4 2h16v2H4zm9 7h3l-4-4-4 4h3v6H8l4 4 4-4h-3z',
+            },
+          },
+        ],
+        props,
+        attrs,
+      );
+  },
+});

@@ -1,27 +1,27 @@
 import type { IIconProps } from '@/utils/useIconRender';
-      import { useIconRender } from '@/utils/useIconRender';
-      import { defineComponent } from 'vue';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
 
-      export default defineComponent({
-        name: 'CategoryIcon',
-        props: {
-          size: [String, Number],
-          color: String,
-          viewBox: String,
-        },
-        setup(props: IIconProps, { attrs }) {
-          return () =>
-            useIconRender(
-              [
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'm12 2-5.5 9h11z'
-    }
-  }
-],
-              props,
-              attrs
-            );
-        },
-      });
+export default defineComponent({
+  name: 'CategoryIcon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IIconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        [
+          {
+            tag: 'path',
+            props: {
+              d: 'm12 2-5.5 9h11z',
+            },
+          },
+        ],
+        props,
+        attrs,
+      );
+  },
+});
