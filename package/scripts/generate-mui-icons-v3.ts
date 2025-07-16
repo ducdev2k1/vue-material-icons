@@ -54,14 +54,16 @@ async function generateIcons() {
   const groupMap: Record<string, string[]> = {};
   let successCount = 0;
   let skipCount = 0;
+  const filesSkip: string[] = [];
 
   for (const file of files) {
     const raw = fs.readFileSync(file, 'utf8');
     const elements = extractSvgElements(raw);
 
     if (elements.length === 0) {
-       console.log(`❌ Bỏ qua: ${path.basename(file)} (không tìm thấy SVG elements)`);
+      console.log(`❌ Bỏ qua: ${path.basename(file)} (không tìm thấy SVG elements)`);
       skipCount++;
+      filesSkip.push(file);
       continue;
     }
 
@@ -125,6 +127,7 @@ async function generateIcons() {
   console.log('\n📊 Tổng kết:');
   console.log(`✅ Đã tạo thành công: ${successCount} icons`);
   console.log(`❌ Bỏ qua: ${skipCount} files`);
+  console.log('❌ List file bỏ qua :>> ', filesSkip);
   console.log('📦 Các thư mục index.ts đã được tạo xong');
   console.log('📦 File index.ts tổng đã được tạo');
 }
