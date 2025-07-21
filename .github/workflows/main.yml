@@ -19,6 +19,10 @@ jobs:
           cache: 'pnpm'
           registry-url: https://registry.npmjs.org/
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10.13.1
       - name: Build package
         working-directory: package
         run: |
