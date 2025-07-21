@@ -5,6 +5,7 @@ export { default as CpuPaRiscIcon } from './CpuPaRiscIcon';
 export { default as CpuMipsIcon } from './CpuMipsIcon';
 export { default as CpuIrix64Icon } from './CpuIrix64Icon';
 export { default as CpuIrixIcon } from './CpuIrixIcon';
+export { default as CpuIa32Icon } from './CpuIa32Icon';
 export { default as CpuAvrIcon } from './CpuAvrIcon';
 export { default as CpuArmhfIcon } from './CpuArmhfIcon';
 export { default as CpuArm64Icon } from './CpuArm64Icon';

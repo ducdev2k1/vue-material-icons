@@ -1,0 +1,59 @@
+import type { IIconProps } from '@/utils/useIconRender';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'CpuIa32Icon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IIconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        [
+          {
+            tag: 'rect',
+            props: {
+              width: '24',
+              height: '24',
+              fill: 'url(#pattern0_32_2)',
+            },
+          },
+          {
+            tag: 'defs',
+            props: {},
+          },
+          {
+            tag: 'pattern',
+            props: {
+              id: 'pattern0_32_2',
+              patternContentUnits: 'objectBoundingBox',
+              width: '1',
+              height: '1',
+            },
+          },
+          {
+            tag: 'use',
+            props: {
+              href: '#image0_32_2',
+              transform: 'scale(0.0625)',
+            },
+          },
+          {
+            tag: 'image',
+            props: {
+              id: 'image0_32_2',
+              width: '16',
+              height: '16',
+              preserveAspectRatio: 'none',
+              href: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDcuMS1jMDAwIDc5LmRhYmFjYmIsIDIwMjEvMDQvMTQtMDA6Mzk6NDQgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMi41IChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCM0QwMDcyRkM0MDExMUVGOEI0RjkwMjFCNzBGNjQzQSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCM0QwMDczMEM0MDExMUVGOEI0RjkwMjFCNzBGNjQzQSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkIzRDAwNzJEQzQwMTExRUY4QjRGOTAyMUI3MEY2NDNBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkIzRDAwNzJFQzQwMTExRUY4QjRGOTAyMUI3MEY2NDNBIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+fE5TYAAAAwlJREFUeNpUU8lPE2EU/83SaaGUAadFRMJSjQjiFr26JSa9aOLJg0Y8mHDx6HKXf8CDiR5cMPFgNCZq8CQq0YNRiwQ33FNsgYJdKDMtbWd7ft+gVV9mvm/mvbzf+71NICK4rovh4WEYhgHbtlGtVqFpWt3Wzf2bN/X1bmxs1rSysWTEJybfxMfH48FgEIODgxBFEeAAlUoFkUgEXFRVbTt75vTQs+cvpt4lc87EbJlepCr0mt2fZ7L29WtXH/T09Kzlwbivd5imySMiFosdSiWT6YxDNJElep916XvBpcSSS++Y8tZUhV4x/ePRh/cYgFAD0HUdxweOxQqlKr3NEeUt8iShU02m8kRfCkQXx4uU+GmwL2rkvsLvFMREau6lGY7u/JguI71kwnIIhumiNeTDvG7CJ4kY2NmMJ9+WsbcdRjRc380yzok870AgEPKFO9eTwxkJYL4INyjgDBcMC1WmaGnwYfRLESG/hKjmxx+Rf9+SIgniZKqMI1vqYLsBsIAwnXrPmC0BZYtguYStERH/igfAqNJYfJI6NmzH+ecG1jVJUAOil8ZC0caPAmutK+DUnibMLxZx8/4jOnnkACmKvFIDC2jecPRc4uC2qBrbvwdFScWyIzIWAhoVZpSqWM7PY+TZBO48isMuFvT02JVuv1/JewyEFTbChcv3cenuU/R1taJVUz19Ti9hOp1HNrMIWDbgk9G+KiBwqaVgu0DHag39B3cjkc5iNltAMqOjvk5BWA2hYtpY3dYCNRiAySYVxcLKEP0BcFhxtKYG2tfXicRcFtG1EXDzcsVEfUBBYjaDaHuL18rp+Txu3B4BI0A1AJ5rZtHA3bFxBtTImDoMKIOqaSEUrENzKIjHrz5gqVRmu+JAkeX/GcgihJnMojA99ZWhyfAGgFfAsdG/aR16u9q8/56ONfixkIMkibXSeQBsGR2zZACVMtPIf5vMDKmZOZTYqHOnT+zNF4qw9DyfbucvA7j60OFdJwx9RydE4b9BcRyG7i0NfwgSK35Tgz/p88k6t/8SYACzAbD6Uoft/wAAAABJRU5ErkJggg==',
+            },
+          },
+        ],
+        props,
+        attrs,
+      );
+  },
+});
