@@ -16,13 +16,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 22.17.0
-          cache: 'pnpm'
+          cache: "pnpm"
           registry-url: https://registry.npmjs.org/
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 10.13.1
+      - name: Install pnpm
+        run: npm install -g pnpm
       - name: Build package
         working-directory: package
         run: |
