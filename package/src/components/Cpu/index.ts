@@ -1,0 +1,12 @@
+export { default as CpuSparc64Icon } from './CpuSparc64Icon';
+export { default as CpuSparcIcon } from './CpuSparcIcon';
+export { default as CpuPpcIcon } from './CpuPpcIcon';
+export { default as CpuPaRiscIcon } from './CpuPaRiscIcon';
+export { default as CpuMipsIcon } from './CpuMipsIcon';
+export { default as CpuIrix64Icon } from './CpuIrix64Icon';
+export { default as CpuIrixIcon } from './CpuIrixIcon';
+export { default as CpuAvrIcon } from './CpuAvrIcon';
+export { default as CpuArmhfIcon } from './CpuArmhfIcon';
+export { default as CpuArm64Icon } from './CpuArm64Icon';
+export { default as CpuArmIcon } from './CpuArmIcon';
+export { default as Cpu68kIcon } from './Cpu68kIcon';
