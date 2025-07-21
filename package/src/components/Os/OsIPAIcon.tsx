@@ -18,7 +18,7 @@ export default defineComponent({
             props: {
               width: '24',
               height: '24',
-              fill: 'url(#pattern0_17_192)',
+              fill: 'url(#pattern0_28_28)',
             },
           },
           {
@@ -28,7 +28,7 @@ export default defineComponent({
           {
             tag: 'pattern',
             props: {
-              id: 'pattern0_17_192',
+              id: 'pattern0_28_28',
               patternContentUnits: 'objectBoundingBox',
               width: '1',
               height: '1',
@@ -37,18 +37,18 @@ export default defineComponent({
           {
             tag: 'use',
             props: {
-              href: '#image0_17_192',
-              transform: 'scale(0.03125)',
+              href: '#image0_28_28',
+              transform: 'scale(0.0416667)',
             },
           },
           {
             tag: 'image',
             props: {
-              id: 'image0_17_192',
-              width: '32',
-              height: '32',
+              id: 'image0_28_28',
+              width: '24',
+              height: '24',
               preserveAspectRatio: 'none',
-              href: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAhVJREFUWEft1EvojmkYx/EPhqJMzudTSuSwcgpNk5UFSSkxZUFSmpo1FsLGgqaGjcMCWbAxC4shFiSnaWThfMgx5BwZZ6JfXe/uL8v/5rnrred9nuu+rt/9vX7X3UE7rw7tXF8joCHQEGgINARCIL8x+IzH6F/X8yc8xZsfXNc/oTcS/xL5PxA/4xUe4WPl6FXfvuIe/k/xjliG97iDJXhWwm7i7xL2PR09sADPcRIzMA3dqvBxHEEf/Ia+6ILb2NYSsLwIfMFGbKoNv2ILjmFCKbhem4dgNDqX6Cu4VM93cR6TMQKrMB2LsROdMBt/tASk4Ack+RpMLaXbcbUSp02Jf4JDmImxRecXHCzRQ7EW/1Vr92IPBmAWduAGcoDDSRg1+/G2UEXMX+hZQvYVskGVZDD+LSIpcg0rENSjqpXrq0hQH8Up/IO56Ff5Xod2WwL+xG68q+RRuxAv6oTjKnmEJO4cNlRszDisDQKJu1h+i9dCaTNWtyVgHeaUe+Pq9G4rTpTDR9Zpx8fFuIV5OIALWIqH9TyxUK/ElDJo8oRMfLGs5YHfy7GXC1MQBlHWcCxC1xqrmO5MjdOkGtWM3FmcrrZlChKf8Utr0oaYcT6610HuY1frJoxBMpvxQXr/AJmIrHgk71Ik37Mn8533Ga0gzd4Ua90D6XMK5RAxbeseyAimTYkPpdfNVdwQaAg0BBoC7U7gG7o2hnAEMbiOAAAAAElFTkSuQmCC',
+              href: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAUBJREFUSEvt0ztLHVEUxfGfEcT4ALWySRBiZWMlWmgKCRYGEXyBhZ2KYuoQiWBjYdBSkkIwHyBFsFEMiKhYaKH4/AA2SlCw0yYoR7ZwuSC3CBcs7sBh5gxrz3/ttecUyfNVlOfvKwByJlyI6GVElObQij1U4R7X+PeMvVeowRWPv3kdbnEZ+mK8w1/cJEEJ5rCBRZyhFm0hyuZU4jw0KygP4G9MYydgDRhNgDKs4xtG8BGpcDWeq/ETu3E/Qhc+YRjteIL24Bc+RFelCVCBCwxhHssYxACa8Br9OMAp/mALs3iLiWjxGGNojPp6jGcDJjGFE3SjM7pJhfvxPgG20YfvaMEbbKIjVoJ/TrPIjOgrejMcJfcLOIyMZ7AU++TuPb5E53eR/xp+oDkNOHVUOMkv4yTndPE/gsKQc6aX94geADlJPqaGQjZEAAAAAElFTkSuQmCC',
             },
           },
         ],
