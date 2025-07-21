@@ -9,4 +9,5 @@ export { default as CpuAvrIcon } from './CpuAvrIcon';
 export { default as CpuArmhfIcon } from './CpuArmhfIcon';
 export { default as CpuArm64Icon } from './CpuArm64Icon';
 export { default as CpuArmIcon } from './CpuArmIcon';
+export { default as CpuAmd64Icon } from './CpuAmd64Icon';
 export { default as Cpu68kIcon } from './Cpu68kIcon';

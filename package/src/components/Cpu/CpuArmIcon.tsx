@@ -1,65 +1,64 @@
 import type { IIconProps } from '@/utils/useIconRender';
-import { useIconRender } from '@/utils/useIconRender';
-import { defineComponent } from 'vue';
+      import { useIconRender } from '@/utils/useIconRender';
+      import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'CpuArmIcon',
-  props: {
-    size: {
-      type: [String, Number],
-      default: 32,
-    },
-    color: String,
-    viewBox: {
-      type: String,
-      default: '0 0 32 32',
-    },
+      export default defineComponent({
+        name: 'CpuArmIcon',
+        props: {
+          size: {
+            type: [String, Number],
+            default: 32,
+          },
+          color: String,
+          viewBox: {
+          type: String,
+          default: '0 0 32 32',},
+        },
+        setup(props: IIconProps, { attrs }) {
+          return () =>
+            useIconRender(
+              [
+  {
+    'tag': 'rect',
+    'props': {
+      'width': '24',
+      'height': '24',
+      'fill': 'url(#pattern0_16_165)'
+    }
   },
-  setup(props: IIconProps, { attrs }) {
-    return () =>
-      useIconRender(
-        [
-          {
-            tag: 'rect',
-            props: {
-              width: '24',
-              height: '24',
-              fill: 'url(#pattern0_16_165)',
-            },
-          },
-          {
-            tag: 'defs',
-            props: {},
-          },
-          {
-            tag: 'pattern',
-            props: {
-              id: 'pattern0_16_165',
-              patternContentUnits: 'objectBoundingBox',
-              width: '1',
-              height: '1',
-            },
-          },
-          {
-            tag: 'use',
-            props: {
-              href: '#image0_16_165',
-              transform: 'scale(0.03125)',
-            },
-          },
-          {
-            tag: 'image',
-            props: {
-              id: 'image0_16_165',
-              width: '32',
-              height: '32',
-              preserveAspectRatio: 'none',
-              href: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAC3UlEQVRYhe2XTWjTYBjHf3mTtGmT2g/cqoIf83uzymB+1Imo6MGDHycd6GFnYWfx6NWrV0HQm4KIXoY4EAoTRFE2xRWZypybrlu7bk3WuSyJh3SdWCsIQi99LnnyPG+e/y9P8uZ9I6XTac80TRphhmEgtbW1eQ1Rr5jQdb1h4rquIxqmXrEmQBOgCdBwAGXFme88ibWjCzuWRJ3LER98iB1LsrhxF5G3GbSJD7iaTv5YD5K9hPbtI/OdJ3HCa9C+Zml5chuz/TDlzXsIjb3HjicxO7pRSgUSmfsEpsfJn7jMwuYO5EULY+Q5enbQB5g618fC1s4qlaNH+XbhavU8kPviAwTDmO3dAJT2Ha/mXc0AwNp5kIW2vZi709XcshFnsucasjWPo0f9+kacwtGLBGUZpbh9f1U8PvgAI/vCv9MTl1jcsAMA8WOhouQAHiChFiZZO3AXT1YIzHz1x5VLAEjLSyQf3UQxi0yd7cNOrMPRoyQy9wh/GqKYPo+5+xCz7d2IQscRANYMPSP2sh+lVCAwPc76+zeQreIfnpoEQGv/LbTJUULjWeTyymrqVWuFxrOos9+JvMv4XcxPEH39FLWYI/bisd+dUATxI7YOAGPkeY1U+PPwHwB8k625unDKfH414tg1MSS5gish8CqrsevWlnOcugCerNTPKb/kREWscvR9f/JJnosIFqcAsHYeqClU3pKqK4L0txks1fFXQqsxkRgZBGBu/2lKqaN4SgBHj5E7cwU72vIXkf9jSmz0FfltXZQ3dTBzqpeZU701g9xgGPi9jXLNuJVp5mqrmxyn4i9HEqvXyqofC0WQW1tbrweHM0iui6vpeGoQtZhj7cAdtMlRhL2I/mnIf4mEwIkkCOQnCH98g1heqgEVjk348zDq7HdfTA2AohIae4828cEfKASOEceYHkNKpVKeZVn/3Lr/Yc0tWROgCdAEABCN+ggBWJaFkkwmaeTv+U9QvAK78/TUqQAAAABJRU5ErkJggg==',
-            },
-          },
-        ],
-        props,
-        attrs,
-      );
+  {
+    'tag': 'defs',
+    'props': {}
   },
-});
+  {
+    'tag': 'pattern',
+    'props': {
+      'id': 'pattern0_16_165',
+      'patternContentUnits': 'objectBoundingBox',
+      'width': '1',
+      'height': '1'
+    }
+  },
+  {
+    'tag': 'use',
+    'props': {
+      'href': '#image0_16_165',
+      'transform': 'scale(0.03125)'
+    }
+  },
+  {
+    'tag': 'image',
+    'props': {
+      'id': 'image0_16_165',
+      'width': '32',
+      'height': '32',
+      'preserveAspectRatio': 'none',
+      'href': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAC3UlEQVRYhe2XTWjTYBjHf3mTtGmT2g/cqoIf83uzymB+1Imo6MGDHycd6GFnYWfx6NWrV0HQm4KIXoY4EAoTRFE2xRWZypybrlu7bk3WuSyJh3SdWCsIQi99LnnyPG+e/y9P8uZ9I6XTac80TRphhmEgtbW1eQ1Rr5jQdb1h4rquIxqmXrEmQBOgCdBwAGXFme88ibWjCzuWRJ3LER98iB1LsrhxF5G3GbSJD7iaTv5YD5K9hPbtI/OdJ3HCa9C+Zml5chuz/TDlzXsIjb3HjicxO7pRSgUSmfsEpsfJn7jMwuYO5EULY+Q5enbQB5g618fC1s4qlaNH+XbhavU8kPviAwTDmO3dAJT2Ha/mXc0AwNp5kIW2vZi709XcshFnsucasjWPo0f9+kacwtGLBGUZpbh9f1U8PvgAI/vCv9MTl1jcsAMA8WOhouQAHiChFiZZO3AXT1YIzHz1x5VLAEjLSyQf3UQxi0yd7cNOrMPRoyQy9wh/GqKYPo+5+xCz7d2IQscRANYMPSP2sh+lVCAwPc76+zeQreIfnpoEQGv/LbTJUULjWeTyymrqVWuFxrOos9+JvMv4XcxPEH39FLWYI/bisd+dUATxI7YOAGPkeY1U+PPwHwB8k625unDKfH414tg1MSS5gish8CqrsevWlnOcugCerNTPKb/kREWscvR9f/JJnosIFqcAsHYeqClU3pKqK4L0txks1fFXQqsxkRgZBGBu/2lKqaN4SgBHj5E7cwU72vIXkf9jSmz0FfltXZQ3dTBzqpeZU701g9xgGPi9jXLNuJVp5mqrmxyn4i9HEqvXyqofC0WQW1tbrweHM0iui6vpeGoQtZhj7cAdtMlRhL2I/mnIf4mEwIkkCOQnCH98g1heqgEVjk348zDq7HdfTA2AohIae4828cEfKASOEceYHkNKpVKeZVn/3Lr/Yc0tWROgCdAEABCN+ggBWJaFkkwmaeTv+U9QvAK78/TUqQAAAABJRU5ErkJggg=='
+    }
+  }
+],
+              props,
+              attrs
+            );
+        },
+      });

@@ -1,4 +1,3 @@
-export { default as BrowserChromeIcon } from './BrowserChromeIcon';
 export { default as BrowserYandexIcon } from './BrowserYandexIcon';
 export { default as BrowserWebIcon } from './BrowserWebIcon';
 export { default as BrowserUcIcon } from './BrowserUcIcon';
@@ -9,4 +8,5 @@ export { default as BrowserElectronIcon } from './BrowserElectronIcon';
 export { default as BrowserEdgeIcon } from './BrowserEdgeIcon';
 export { default as BrowserDolphinIcon } from './BrowserDolphinIcon';
 export { default as BrowserChromiumIcon } from './BrowserChromiumIcon';
+export { default as BrowserChromeIcon } from './BrowserChromeIcon';
 export { default as BrowserBraveIcon } from './BrowserBraveIcon';
