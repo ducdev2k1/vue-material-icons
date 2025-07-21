@@ -25,7 +25,7 @@ jobs:
       - name: Build package
         working-directory: package
         run: |
-          pnpm ci
+          pnpm install
           rm -rf dist 
           export NODE_OPTIONS=--max-old-space-size=8192
           pnpm run build
