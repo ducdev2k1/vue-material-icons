@@ -61,24 +61,6 @@ export default defineComponent({
               fill: '#009966',
             },
           },
-          {
-            tag: 'defs',
-            props: {},
-          },
-          {
-            tag: 'clipPath',
-            props: {
-              id: 'clip0_6_2',
-            },
-          },
-          {
-            tag: 'rect',
-            props: {
-              width: '24',
-              height: '24',
-              fill: 'white',
-            },
-          },
         ],
         props,
         attrs,
