@@ -16,26 +16,20 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 22.17.0
+          cache: 'pnpm'
           registry-url: https://registry.npmjs.org/
-          # cache: 'npm'
-
-      - name: Install dependencies
-        working-directory: package
-        run: |
-          rm -rf node_modules package-lock.json 
-          npm install --ignore-scripts
-          npm install
 
       - name: Build package
         working-directory: package
         run: |
+          pnpm ci
           rm -rf dist 
           export NODE_OPTIONS=--max-old-space-size=8192
-          npm run build
+          pnpm run build
 
       - name: Publish to NPM
         working-directory: package
-        run: npm publish --access public
+        run: pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 

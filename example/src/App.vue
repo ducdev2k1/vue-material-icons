@@ -9,5 +9,7 @@
     <HomeIcon />
     <MaterinalIcon icon="HomeTwoToneIcon" />
     <MaterinalIcon icon="FaceScanerIcon" />
+    <MaterinalIcon icon="BrowserChromeIcon" />
+    <MaterinalIcon icon="BrowserChromiumIcon" />
   </div>
 </template>
