@@ -1,100 +1,60 @@
 import type { IIconProps } from '@/utils/useIconRender';
-      import { useIconRender } from '@/utils/useIconRender';
-      import { defineComponent } from 'vue';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
 
-      export default defineComponent({
-        name: 'BrowserBraveIcon',
-        props: {
-          size: {
-            type: [String, Number],
-            default: 32,
+export default defineComponent({
+  name: 'BrowserBraveIcon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IIconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        [
+          {
+            tag: 'rect',
+            props: {
+              x: '0.5',
+              width: '24',
+              height: '24',
+              fill: 'url(#pattern0_26_185)',
+            },
           },
-          color: String,
-          viewBox: {
-          type: String,
-          default: '0 0 32 32',},
-        },
-        setup(props: IIconProps, { attrs }) {
-          return () =>
-            useIconRender(
-              [
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M20.7509 6.26426L21.2708 4.99061L19.7978 3.4657C19.0007 2.66859 17.3025 3.13646 17.3025 3.13646L15.3791 0.953064H8.59496L6.66283 3.14512C6.66283 3.14512 4.96464 2.68592 4.16752 3.4657L2.6946 4.98194L3.21446 6.25559L2.56464 8.1444L4.7307 16.4014C5.18124 18.1689 5.48449 18.8534 6.75814 19.7545L10.7177 22.4404C11.0989 22.6744 11.5668 23.0816 11.9914 23.0816C12.4159 23.0816 12.8838 22.6744 13.265 22.4404L17.2246 19.7545C18.4982 18.8534 18.8015 18.1689 19.252 16.4014L21.4181 8.1444L20.7509 6.26426Z',
-      'fill': 'url(#paint0_linear_13_2)'
-    }
+          {
+            tag: 'defs',
+            props: {},
+          },
+          {
+            tag: 'pattern',
+            props: {
+              id: 'pattern0_26_185',
+              patternContentUnits: 'objectBoundingBox',
+              width: '1',
+              height: '1',
+            },
+          },
+          {
+            tag: 'use',
+            props: {
+              href: '#image0_26_185',
+              transform: 'scale(0.04)',
+            },
+          },
+          {
+            tag: 'image',
+            props: {
+              id: 'image0_26_185',
+              width: '25',
+              height: '25',
+              preserveAspectRatio: 'none',
+              href: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMYSURBVHgBxVU9TBRREP7e+VOQKBRoo4bFUmLARo2FnhbEjjNKohVQEWPhXaGNBXeJjVIApTEBrlVMwE4tOGg0xkRIFCtzS0CNMRE4hM4dv/fecrd7t7eoITrJu3n7fuabb2beHPAPRG13QBw4VL0xR4aVi1X8LQgBmqimOTrCG/5VZSZzHOfjgFSkYY+eJwxAO4+kfKtxMskxz+HqeTVgCERSNLzH93yTv0WOzcDRfY1AI7GX3MBN5VNTlqOQmZILQaDdIX/2YAii2k0YGvg9OAQ4SWCZRku800lS+5vs/FXB6mOM5AIjdqvPIiqcoB7nSCFK5ArS0g0x41FW/khyaWGot0ZP0G6YidI5oBxwgO4BhoqejmeAb66g2VFm7SD3PtDzJ3nBe+pTSYXOLiDNvReTljVMRUYLGbw1LN5Nh73U3/dTnkwN2+88dX9K5GXVuWeTlkmrKtZnArVqkvdmCmhLVoqiLUk2iwrNLfb7kANcZkROJ8PXdW6MtzKHukzKOVFeTU6uO578WLHz5aLItWR4fygbzMnNoN1EmAgK5flEDnics3N3TudH4SP1Fxf47FqvS36VjvDcSNb31NTzDOKETL6TkVeusg3f+6/0/ja9P8O9Puqlol1fW6kwaOGeg2K1zUQtCp6aateic9HQZNd1Vd3jOz2bUhilPuzYdf1u9FsxbcbcK2wPsgt+0vgiNwPdQc8fsJxnWaaDmfCdkq0XX2pCVdu7rrLGf25R5va5HsviNY138D0codfPWX2zBfbmNPDJBUaHgyZa2VLcWBAD1G1AGGXbZnGyS+HGWCV0WvSj67/EApi3yVai4+UqV1qr7SUQLVMVN3hZv5tCPnxCs1mYp3nxAbQ1KUQZiwYR07pRjrNWYwzNw4xgnfG/w2Z4N60fHZ1QlWh4yEeZq/unxTLOcncgtLjOUfLHhg1SYDfHXGTx20w0+gQvJEB31Yoxp/OjAlwrDurSytQDiGVStpZiAezlH5lHveGzWNNMlM7HDC30sh0uYidEh08uwr744+wKR8P9aceEIA5BstIR83/xv+QXLFrOmGLbM6AAAAAASUVORK5CYII=',
+            },
+          },
+        ],
+        props,
+        attrs,
+      );
   },
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M16.7653 4.54009C16.7653 4.54009 19.252 7.54659 19.252 8.17908C19.252 8.8289 18.9401 8.99352 18.6282 9.33143L16.7653 11.3242C16.5921 11.4975 16.2195 11.7921 16.4361 12.3033C16.6527 12.8231 16.9559 13.4643 16.6094 14.1228C16.2628 14.7899 15.6563 15.2318 15.2664 15.1625C14.6865 14.9743 14.1332 14.7122 13.6202 14.3827C13.291 14.1661 12.2339 13.291 12.2339 12.9531C12.2339 12.6152 13.3256 12 13.5336 11.8787C13.7328 11.7401 14.6599 11.2029 14.6772 10.995C14.6946 10.787 14.6946 10.735 14.4173 10.2152C14.1401 9.69532 13.6549 9.00218 13.7242 8.55164C13.8108 8.1011 14.5906 7.8585 15.1711 7.6419L16.9646 6.96608C17.1032 6.89677 17.0686 6.83612 16.6527 6.7928C16.2368 6.75814 15.0671 6.60218 14.5386 6.74948C14.0101 6.89677 13.1263 7.12204 13.0397 7.24334C12.9704 7.36464 12.9011 7.36464 12.9791 7.78052L13.4816 10.5098C13.5162 10.8563 13.5856 11.0903 13.2217 11.1769C12.8404 11.2636 12.2079 11.4108 11.9913 11.4108C11.7747 11.4108 11.1336 11.2636 10.761 11.1769C10.3884 11.0903 10.4578 10.8563 10.5011 10.5098C10.5357 10.1632 10.917 8.18774 10.9949 7.78052C11.0816 7.36464 11.0036 7.36464 10.9343 7.24334C10.8476 7.12204 9.95523 6.89677 9.42671 6.74948C8.90685 6.60218 7.72851 6.75814 7.31263 6.80146C6.89674 6.83612 6.86209 6.8881 7.00072 6.97475L8.79422 7.6419C9.36606 7.8585 10.1632 8.1011 10.2411 8.55164C10.3278 9.01085 9.83393 9.69532 9.54801 10.2152C9.26209 10.735 9.27075 10.787 9.28808 10.995C9.30541 11.2029 10.2411 11.7401 10.4318 11.8787C10.6397 12.0087 11.7314 12.6152 11.7314 12.9531C11.7314 13.291 10.7004 14.1661 10.3538 14.3827C9.84078 14.7122 9.2875 14.9743 8.70757 15.1625C8.31768 15.2318 7.71118 14.7899 7.35595 14.1228C7.00938 13.4643 7.32129 12.8231 7.52924 12.3033C7.74584 11.7834 7.38194 11.5062 7.19999 11.3242L5.33718 9.33143C5.03393 9.01085 4.72202 8.83756 4.72202 8.19641C4.72202 7.55525 7.20866 4.55742 7.20866 4.55742L9.574 4.93865C9.85126 4.93865 10.4664 4.70471 11.0296 4.50543C11.5928 4.33215 11.9827 4.31482 11.9827 4.31482C11.9827 4.31482 12.3639 4.31482 12.9357 4.50543C13.5076 4.69605 14.1141 4.93865 14.3913 4.93865C14.6772 4.93865 16.774 4.53143 16.774 4.53143L16.7653 4.54009ZM14.9025 16.0462C15.0585 16.1329 14.9632 16.3235 14.8159 16.4275L12.6152 18.143C12.4419 18.3163 12.1646 18.5762 11.9827 18.5762C11.8007 18.5762 11.5321 18.3163 11.3502 18.143C10.6207 17.5622 9.88422 16.9903 9.14079 16.4275C9.00216 16.3235 8.90685 16.1415 9.05415 16.0462L10.3538 15.3531C10.8704 15.0798 11.417 14.8676 11.9827 14.7206C12.1126 14.7206 12.9357 15.0152 13.6029 15.3531L14.9025 16.0462Z',
-      'fill': 'white'
-    }
-  },
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M17.3199 3.14512L15.3791 0.953064H8.59495L6.66282 3.14512C6.66282 3.14512 4.96462 2.68592 4.16751 3.4657C4.16751 3.4657 6.42022 3.26642 7.2 4.5314L9.59134 4.93862C9.86859 4.93862 10.4838 4.70469 11.0469 4.50541C11.6101 4.33213 12 4.3148 12 4.3148C12 4.3148 12.3812 4.3148 12.9531 4.50541C13.5249 4.69602 14.1314 4.93862 14.4087 4.93862C14.6946 4.93862 16.7913 4.5314 16.7913 4.5314C17.5711 3.26642 19.8238 3.4657 19.8238 3.4657C19.0267 2.66859 17.3285 3.13646 17.3285 3.13646',
-      'fill': 'url(#paint1_linear_13_2)'
-    }
-  },
-  {
-    'tag': 'defs',
-    'props': {}
-  },
-  {
-    'tag': 'linearGradient',
-    'props': {
-      'id': 'paint0_linear_13_2',
-      'x1': '2.56464',
-      'y1': '31261.9',
-      'x2': '21.4181',
-      'y2': '31261.9',
-      'gradientUnits': 'userSpaceOnUse'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.4',
-      'color': '#FF5500'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.6',
-      'color': '#FF2000'
-    }
-  },
-  {
-    'tag': 'linearGradient',
-    'props': {
-      'id': 'paint1_linear_13_2',
-      'x1': '871.527',
-      'y1': '5631.35',
-      'x2': '19.8238',
-      'y2': '5631.35',
-      'gradientUnits': 'userSpaceOnUse'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'color': '#FF452A'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '1',
-      'color': '#FF2000'
-    }
-  }
-],
-              props,
-              attrs
-            );
-        },
-      });
+});

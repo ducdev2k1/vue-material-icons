@@ -1,113 +1,60 @@
 import type { IIconProps } from '@/utils/useIconRender';
-      import { useIconRender } from '@/utils/useIconRender';
-      import { defineComponent } from 'vue';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
 
-      export default defineComponent({
-        name: 'BrowserOperaIcon',
-        props: {
-          size: {
-            type: [String, Number],
-            default: 32,
+export default defineComponent({
+  name: 'BrowserOperaIcon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IIconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        [
+          {
+            tag: 'rect',
+            props: {
+              x: '0.5',
+              width: '24',
+              height: '24',
+              fill: 'url(#pattern0_26_191)',
+            },
           },
-          color: String,
-          viewBox: {
-          type: String,
-          default: '0 0 32 32',},
-        },
-        setup(props: IIconProps, { attrs }) {
-          return () =>
-            useIconRender(
-              [
-  {
-    'tag': 'g',
-    'props': {
-      'path': 'url(#clip0_14_71)'
-    }
+          {
+            tag: 'defs',
+            props: {},
+          },
+          {
+            tag: 'pattern',
+            props: {
+              id: 'pattern0_26_191',
+              patternContentUnits: 'objectBoundingBox',
+              width: '1',
+              height: '1',
+            },
+          },
+          {
+            tag: 'use',
+            props: {
+              href: '#image0_26_191',
+              transform: 'scale(0.04)',
+            },
+          },
+          {
+            tag: 'image',
+            props: {
+              id: 'image0_26_191',
+              width: '25',
+              height: '25',
+              preserveAspectRatio: 'none',
+              href: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANySURBVHgBxVbdThNBFD5nO7vbJiBrE5OSJlJEE39irL6A1TuVRLnTK9onwDcAn0DxBSxXXhjjld4J9cIrTaiaoInGbi8UIoKL0B+6OzOe2Z+2WIESE/2S2bM7Mz3ffGfOzCnAPwD2M0kOnxoBjV0CKTOAOETWIVsF4S3g8vvqX5HI9Nk8CDkJGuZ2DkjZkgK2BcdBZpapYxa/vCseiESmTmYgpj+g15z6jOa55Hipvgaf6g5scVdx0QhCksVhLDFUfuV8nSgA2PuSyPTpLEBsgV6t7v5qa9NerH2bq7uucjKEmpZHxCwqXaEfelSA84mbrvtmVxJfgabPU+8odIWmJvn9R43lmYLjON3zHw8MTGuI06QGZcehA5p2fsJx7D+TpM9WyGSCkXCNAEWKdwF2wdNkcorm3iMeP3zKopSlK2trl6I5WofgzGSbIFCgdoPkx+7AHri2vj6b0PWSqeuQMAyprGEYuefpdL6HhPbhdo8HhBe4UrZhH+jx+B3TMMDQdYyTVS3B2GTHDUR7wT77WoNsCpS44gKuLpWhD7w+ceIH/caKwqyeyPnohUqlGijR9XMhQZuYvjf6JVAwGSsrBSpcZCWFDA3TzKkxFqwaz0cCOkAbDgDTNKsYKpDYDsloh6T7TMggpWi3HDgAaE9sLUqv0AoVvi6SjsMobLIr0/pAXNcz2DkSPpEM/Ybhkna0iEgMqovwAKA0HpHqjEA78EqJv6f+xje5W9qme6kpdrTDm6mTuX5JaLOzpEaFzU9h9W5p2mKbJLHywW54olT3PFnzONQ5h5rnQdMTF/shkFevXmeMWYY6iIxFrYzz89U2icKW4HM1LlAR1LnwW1PIqYqVsfZlQZzxQx2dgiB5ZqPhNsnRtY9Fchyo4aEa7llNod3dy78cH58mkw2dR6RVfPas2EOi0NjmhboQG42QyFcmeP5t8vjdXQimyPHMb9029eW6O3rqyUs9k5Ux/kQilVo1IUhFOJJKVkeODc/FDc0GxlQJvgFBUeuGulouk4ryniQKC/FUpiVwgYrEiL9ilZnEFE8YMDY2DIODCTg0kGgfvJ9bDWzUW6XG91ph1O69UPes8U9iqTxKMUUkfszDEugHXtdjwOjWFR4vCbdVHOerc7v56evfykOwMhJiVGrlOQTNIpaN4G5zS7egUwH/K34BmCCbsEL46egAAAAASUVORK5CYII=',
+            },
+          },
+        ],
+        props,
+        attrs,
+      );
   },
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M12 0.935796C10.2066 0.935673 8.44001 1.37151 6.85244 2.20577C5.26487 3.04002 3.90389 4.24769 2.88672 5.72476C1.86955 7.20183 1.22669 8.90402 1.01349 10.6847C0.80029 12.4654 1.02315 14.2713 1.66288 15.9467C2.30261 17.6222 3.34003 19.117 4.68579 20.3024C6.03154 21.4879 7.6453 22.3284 9.38806 22.7517C11.1308 23.1749 12.9504 23.1682 14.6899 22.7321C16.4295 22.2959 18.037 21.4435 19.374 20.2481C18.0624 21.1284 16.5191 21.5997 14.9395 21.6022C12.3039 21.6022 9.9457 20.2943 8.35597 18.2334C7.13175 16.789 6.34129 14.6554 6.28625 12.2598V11.7358C6.34129 9.3402 7.13175 7.20442 8.35597 5.76222C9.94129 3.7013 12.3039 2.39341 14.9395 2.39341C16.56 2.39341 18.0771 2.88882 19.374 3.74974C17.3584 1.9429 14.7487 0.940547 12.0418 0.933594H11.9978L12 0.935796Z',
-      'fill': 'url(#paint0_linear_14_71)'
-    }
-  },
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M8.35816 5.76443C9.371 4.56663 10.6855 3.84223 12.1167 3.84223C15.338 3.84223 17.9516 7.49728 17.9516 11.9978C17.9516 16.5028 15.3402 20.1534 12.1167 20.1534C10.6855 20.1534 9.3732 19.4312 8.35816 18.2334C9.94348 20.2943 12.3038 21.6022 14.9416 21.6022C16.5211 21.5989 18.0642 21.1277 19.3761 20.2481C20.5382 19.2115 21.4677 17.9406 22.1034 16.519C22.739 15.0974 23.0665 13.5573 23.0642 12C23.0661 10.4426 22.7382 8.90249 22.1022 7.4809C21.4661 6.0593 20.5363 4.78846 19.3739 3.75196C18.0624 2.8716 16.5191 2.40033 14.9394 2.39783C12.3038 2.39783 9.94568 3.70572 8.35596 5.76663',
-      'fill': 'url(#paint1_linear_14_71)'
-    }
-  },
-  {
-    'tag': 'defs',
-    'props': {}
-  },
-  {
-    'tag': 'linearGradient',
-    'props': {
-      'id': 'paint0_linear_14_71',
-      'x1': '10.1505',
-      'y1': '1.2991',
-      'x2': '10.1505',
-      'y2': '22.745',
-      'gradientUnits': 'userSpaceOnUse'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.6',
-      'color': '#FF1B2D'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '1',
-      'color': '#A70014'
-    }
-  },
-  {
-    'tag': 'linearGradient',
-    'props': {
-      'id': 'paint1_linear_14_71',
-      'x1': '15.7211',
-      'y1': '2.55416',
-      'x2': '15.7211',
-      'y2': '21.534',
-      'gradientUnits': 'userSpaceOnUse'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'color': '#9C0000'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.7',
-      'color': '#FF4B4B'
-    }
-  },
-  {
-    'tag': 'clipPath',
-    'props': {
-      'id': 'clip0_14_71'
-    }
-  },
-  {
-    'tag': 'rect',
-    'props': {
-      'width': '24',
-      'height': '24',
-      'fill': 'white'
-    }
-  }
-],
-              props,
-              attrs
-            );
-        },
-      });
+});

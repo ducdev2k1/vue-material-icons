@@ -5,15 +5,9 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'OsREXIcon',
   props: {
-    size: {
-      type: [String, Number],
-      default: 32,
-    },
+    size: [String, Number],
     color: String,
-    viewBox: {
-      type: String,
-      default: '0 0 32 32',
-    },
+    viewBox: String,
   },
   setup(props: IIconProps, { attrs }) {
     return () =>

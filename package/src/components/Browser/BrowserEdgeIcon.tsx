@@ -1,288 +1,60 @@
 import type { IIconProps } from '@/utils/useIconRender';
-      import { useIconRender } from '@/utils/useIconRender';
-      import { defineComponent } from 'vue';
+import { useIconRender } from '@/utils/useIconRender';
+import { defineComponent } from 'vue';
 
-      export default defineComponent({
-        name: 'BrowserEdgeIcon',
-        props: {
-          size: {
-            type: [String, Number],
-            default: 32,
+export default defineComponent({
+  name: 'BrowserEdgeIcon',
+  props: {
+    size: [String, Number],
+    color: String,
+    viewBox: String,
+  },
+  setup(props: IIconProps, { attrs }) {
+    return () =>
+      useIconRender(
+        [
+          {
+            tag: 'rect',
+            props: {
+              x: '0.5',
+              width: '24',
+              height: '24',
+              fill: 'url(#pattern0_26_189)',
+            },
           },
-          color: String,
-          viewBox: {
-          type: String,
-          default: '0 0 32 32',},
-        },
-        setup(props: IIconProps, { attrs }) {
-          return () =>
-            useIconRender(
-              [
-  {
-    'tag': 'g',
-    'props': {
-      'path': 'url(#clip0_8_12)'
-    }
+          {
+            tag: 'defs',
+            props: {},
+          },
+          {
+            tag: 'pattern',
+            props: {
+              id: 'pattern0_26_189',
+              patternContentUnits: 'objectBoundingBox',
+              width: '1',
+              height: '1',
+            },
+          },
+          {
+            tag: 'use',
+            props: {
+              href: '#image0_26_189',
+              transform: 'scale(0.04)',
+            },
+          },
+          {
+            tag: 'image',
+            props: {
+              id: 'image0_26_189',
+              width: '25',
+              height: '25',
+              preserveAspectRatio: 'none',
+              href: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAVlSURBVHgBjVZNbFRVFD7nvp+ZQpEiREkgOpqYECXpYOqCuGkTFyYuqBs3LmgTdy5AjQlKCMWFMS4I3bhwYUuMKxNTogskkRlCIixMWoW0yo+dJkUQpfM605nOe/fde/zum462lAqvc9997917z3fOd75zb5ke4dpzabKgtNfPSvewtHqIEmIxU8aLK9Mvvzb1sPW80UCxNNtDnh0yZA8QmX5iS5YMRowQx1iYEEmLmXUl8JrlkOonLu8frjwySLF0G17bMRguwLAIGXYg6DtNiBxQzEotU+AtUhg0JOcvj5JdPlHe90602p66H6DvYvW454XnFQUFFp8Uh5jkgx6v3ShrcC50DeOKPMXkK8uK08P5XDr56sxIYUOQvouLx+HwCAtYyIw543jOjKv2dMl6aS/Fd0Xi4dW1wDPkeWkhH3BpcOZIYR1IX6naz1ZGsFp4NZPS6fDOvPK5PYaJ7odoLCllAWQpRAsc0GYaW5eTly4szMJeweqEqr/eoKRWpySqkQp98gKm/K4d0rVrG6vukESQFzbAXKauoEq5YIHyYQ19nfJBg0I/BlCCeXb4y90nx30H8GJpfkgnjcK9Kzcpmr1NqqubOMyT2vSEIN2cpqkkNxd48WqFNj/7uHS/sIuRKrjoRJEiPkudRiuR+Z5TohzHbTyLZO+565O3SjO9qfaZu7eRQqwqzIFv5Th3NQF7sVCzytKokvJasn3gKfZyGt4vwnvXXCQNtCaeY6gtyQDh34C3pzRZuDf15yfNBjzfupOp6zHhIEfOOrv8u95DwC6y3KYL4OC0jZOI4vqe3E4Fr1vieS3kI2ZPJdBdinVO5vgD/8byz37tj7h38a4vassOtjAGBtiyCFTJ7kYWVdGskV34ezj69JXTnRzKu18NdT8nY7KlxdYmZG2KZinFfLBFkrblIlZ6VHRDirJpu9MHJrXRxfWYaAyqvFGnVmnizGoAd907+eY4e80JoVisjeFxStqkADECikATUYq04D1SielmpGrFsDggwbzMK0li0pfPgpLcA/cnv6s+xbLExrRgEM1qAKSsjZYk1ZRAqWmqp3ymoOoMolxJ2RVZO025Cpi/iXDAXa776QeBKK4X4SvmakSSkEo1azzDSzaeRtnK3Pd7Py8r8DlHHYrERWMzqqwDnL9O7OdYBfnB+wH6Lh89wFQfZEIt8RJZswR6m2TSJqJqktatuVgnA5kzxjdlyaRAWU6sbfeiYzipsXMEmOX1bHnji4OrQdg05oiiCnNNHBCzA6mBsiUHUm614oHyvvFKmxpc3tHpEmLBdo6dKlMuBpImBb+UhPNbIWGUvLWRtlJsffPW3JqILg31syS9aNuwLjKcTv20f6K8xqHsfuTqkFI81tmelCvCpEHBlbKo/BZmz20lrqKlYih+vfH12w89qNaDuIcPpmcRSCGLxv0ghHDyrKigi9nPU5YosIjqhxJo3Fo92phYD9bTP9JD+VyR9HJv9MNHo+6b3xnEpjeMEjyvFOygDt1WZLfvZlW9Az7D//Zdl0iSIYR3cOvgZ6BOpiCYSLl9y5oCHClSiiOa7cC6SLLrw+lD8PgUZ6FA1XqZwt9+FOXlkPvARcPtiDIZYlb27GjMVMnZd5yiunkiOndspGN27cn48fOjcHbEVX2mtqCLzJPPMKVNsKR5Lc0uYPcpM91WCzknzOHVAOsj6VzHrvZyyhNYV3Br/TvXKLj7O2W54SA7qNoRWM4070QhtgLdD0ffvV+mjRL/wAuqY48OgbmiSvEPw+0b4i/cwtaAY9dp3QGJwKg5E3373qmNzPw/yL9gMwXP10Vhv6BYeoK/ZiOu1yrh/LVyVB6JHrb8HwNP+ywYgcn0AAAAAElFTkSuQmCC',
+            },
+          },
+        ],
+        props,
+        attrs,
+      );
   },
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M21.6656 17.8594C21.3438 18.0266 21.0119 18.1738 20.6719 18.3C19.5952 18.7007 18.4551 18.904 17.3063 18.9C12.8719 18.9 9.00938 15.8531 9.00938 11.9344C9.01514 11.4096 9.16063 10.8959 9.43086 10.4461C9.70109 9.99623 10.0863 9.62652 10.5469 9.375C6.53438 9.54375 5.50313 13.725 5.50313 16.1719C5.50313 23.1094 11.8875 23.8031 13.2656 23.8031C14.0063 23.8031 15.1219 23.5875 15.7969 23.3719L15.9188 23.3344C18.5019 22.4417 20.7041 20.6958 22.1625 18.3844C22.2049 18.3141 22.2231 18.232 22.2143 18.1504C22.2055 18.0688 22.1702 17.9924 22.1138 17.9328C22.0574 17.8733 21.9831 17.8338 21.9021 17.8205C21.8212 17.8073 21.7381 17.8209 21.6656 17.8594Z',
-      'fill': 'url(#paint0_linear_8_12)'
-    }
-  },
-  {
-    'tag': 'path',
-    'props': {
-      'opacity': '0.35',
-      'd': 'M21.6656 17.8594C21.3438 18.0266 21.0119 18.1738 20.6719 18.3C19.5952 18.7007 18.4551 18.904 17.3063 18.9C12.8719 18.9 9.00938 15.8531 9.00938 11.9344C9.01514 11.4096 9.16063 10.8959 9.43086 10.4461C9.70109 9.99623 10.0863 9.62652 10.5469 9.375C6.53438 9.54375 5.50313 13.725 5.50313 16.1719C5.50313 23.1094 11.8875 23.8031 13.2656 23.8031C14.0063 23.8031 15.1219 23.5875 15.7969 23.3719L15.9188 23.3344C18.5019 22.4417 20.7041 20.6958 22.1625 18.3844C22.2049 18.3141 22.2231 18.232 22.2143 18.1504C22.2055 18.0688 22.1702 17.9924 22.1138 17.9328C22.0574 17.8733 21.9831 17.8338 21.9021 17.8205C21.8212 17.8073 21.7381 17.8209 21.6656 17.8594Z',
-      'fill': 'url(#paint1_radial_8_12)'
-    }
-  },
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M9.90938 22.6219C9.07489 22.1036 8.35155 21.4249 7.78125 20.625C7.13001 19.7336 6.68173 18.7105 6.46787 17.6275C6.254 16.5445 6.27975 15.4278 6.54329 14.3558C6.80683 13.2837 7.30178 12.2824 7.9934 11.4219C8.68503 10.5615 9.55658 9.86286 10.5469 9.37502C10.8469 9.2344 11.3438 8.99065 12.0094 9.00002C12.4778 9.00365 12.939 9.11555 13.3569 9.32697C13.7749 9.53839 14.1383 9.84361 14.4188 10.2188C14.796 10.726 15.0027 11.3398 15.0094 11.9719C15.0094 11.9531 17.3063 4.5094 7.50938 4.5094C3.39375 4.5094 0.00937849 8.4094 0.00937849 11.8407C-0.00699164 13.6532 0.380514 15.4466 1.14375 17.0907C2.3937 19.7522 4.57738 21.8622 7.28028 23.0201C9.98319 24.178 13.0172 24.3032 15.8063 23.3719C14.8291 23.6805 13.7966 23.7733 12.7801 23.6438C11.7636 23.5143 10.7873 23.1656 9.91875 22.6219H9.90938Z',
-      'fill': 'url(#paint2_linear_8_12)'
-    }
-  },
-  {
-    'tag': 'path',
-    'props': {
-      'opacity': '0.41',
-      'd': 'M9.90938 22.6219C9.07489 22.1036 8.35155 21.4249 7.78125 20.625C7.13001 19.7336 6.68173 18.7105 6.46787 17.6275C6.254 16.5445 6.27975 15.4278 6.54329 14.3558C6.80683 13.2837 7.30178 12.2824 7.9934 11.4219C8.68503 10.5615 9.55658 9.86286 10.5469 9.37502C10.8469 9.2344 11.3438 8.99065 12.0094 9.00002C12.4778 9.00365 12.939 9.11555 13.3569 9.32697C13.7749 9.53839 14.1383 9.84361 14.4188 10.2188C14.796 10.726 15.0027 11.3398 15.0094 11.9719C15.0094 11.9531 17.3063 4.5094 7.50938 4.5094C3.39375 4.5094 0.00937849 8.4094 0.00937849 11.8407C-0.00699164 13.6532 0.380514 15.4466 1.14375 17.0907C2.3937 19.7522 4.57738 21.8622 7.28028 23.0201C9.98319 24.178 13.0172 24.3032 15.8063 23.3719C14.8291 23.6805 13.7966 23.7733 12.7801 23.6438C11.7636 23.5143 10.7873 23.1656 9.91875 22.6219H9.90938Z',
-      'fill': 'url(#paint3_radial_8_12)'
-    }
-  },
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M14.2875 13.95C14.2031 14.0438 13.9688 14.1844 13.9688 14.475C13.9688 14.7187 14.1281 14.9625 14.4187 15.1594C15.7594 16.0969 18.3 15.9656 18.3094 15.9656C19.3088 15.965 20.2898 15.6963 21.15 15.1875C22.0161 14.6809 22.7347 13.9568 23.2346 13.0869C23.7345 12.2169 23.9984 11.2315 24 10.2281C24.0281 8.12813 23.25 6.73125 22.9406 6.1125C20.9438 2.23125 16.6594 5.87477e-08 12 5.87477e-08C8.84643 -0.000311772 5.81948 1.24078 3.57383 3.45485C1.32818 5.66892 0.0443471 8.67799 0 11.8312C0.046875 8.40937 3.45 5.64375 7.5 5.64375C7.82812 5.64375 9.70312 5.67187 11.4375 6.58125C12.656 7.18674 13.665 8.14353 14.3344 9.32812C14.9062 10.3219 15.0094 11.5875 15.0094 12.0938C15.0094 12.6 14.7562 13.3406 14.2781 13.9594L14.2875 13.95Z',
-      'fill': 'url(#paint4_radial_8_12)'
-    }
-  },
-  {
-    'tag': 'path',
-    'props': {
-      'd': 'M14.2875 13.95C14.2031 14.0438 13.9688 14.1844 13.9688 14.475C13.9688 14.7187 14.1281 14.9625 14.4187 15.1594C15.7594 16.0969 18.3 15.9656 18.3094 15.9656C19.3088 15.965 20.2898 15.6963 21.15 15.1875C22.0161 14.6809 22.7347 13.9568 23.2346 13.0869C23.7345 12.2169 23.9984 11.2315 24 10.2281C24.0281 8.12813 23.25 6.73125 22.9406 6.1125C20.9438 2.23125 16.6594 5.87477e-08 12 5.87477e-08C8.84643 -0.000311772 5.81948 1.24078 3.57383 3.45485C1.32818 5.66892 0.0443471 8.67799 0 11.8312C0.046875 8.40937 3.45 5.64375 7.5 5.64375C7.82812 5.64375 9.70312 5.67187 11.4375 6.58125C12.656 7.18674 13.665 8.14353 14.3344 9.32812C14.9062 10.3219 15.0094 11.5875 15.0094 12.0938C15.0094 12.6 14.7562 13.3406 14.2781 13.9594L14.2875 13.95Z',
-      'fill': 'url(#paint5_radial_8_12)'
-    }
-  },
-  {
-    'tag': 'defs',
-    'props': {}
-  },
-  {
-    'tag': 'linearGradient',
-    'props': {
-      'id': 'paint0_linear_8_12',
-      'x1': '5.50313',
-      'y1': '16.5937',
-      'x2': '22.2281',
-      'y2': '16.5937',
-      'gradientUnits': 'userSpaceOnUse'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'color': '#0C59A4'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '1',
-      'color': '#114A8B'
-    }
-  },
-  {
-    'tag': 'radialGradient',
-    'props': {
-      'id': 'paint1_radial_8_12',
-      'cx': '0',
-      'cy': '0',
-      'r': '1',
-      'gradientUnits': 'userSpaceOnUse',
-      'gradientTransform': 'translate(14.7375 16.7198) scale(8.94375 8.49656)'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.7',
-      'opacity': '0'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.9',
-      'opacity': '0.5'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '1'
-    }
-  },
-  {
-    'tag': 'linearGradient',
-    'props': {
-      'id': 'paint2_linear_8_12',
-      'x1': '14.3156',
-      'y1': '9.33752',
-      'x2': '3.88125',
-      'y2': '20.7094',
-      'gradientUnits': 'userSpaceOnUse'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'color': '#1B9DE2'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.2',
-      'color': '#1595DF'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.7',
-      'color': '#0680D7'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '1',
-      'color': '#0078D4'
-    }
-  },
-  {
-    'tag': 'radialGradient',
-    'props': {
-      'id': 'paint3_radial_8_12',
-      'cx': '0',
-      'cy': '0',
-      'r': '1',
-      'gradientUnits': 'userSpaceOnUse',
-      'gradientTransform': 'translate(6.61454 18.6504) rotate(-81.3844) scale(13.4424 10.8601)'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.8',
-      'opacity': '0'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.9',
-      'opacity': '0.5'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '1'
-    }
-  },
-  {
-    'tag': 'radialGradient',
-    'props': {
-      'id': 'paint4_radial_8_12',
-      'cx': '0',
-      'cy': '0',
-      'r': '1',
-      'gradientUnits': 'userSpaceOnUse',
-      'gradientTransform': 'translate(2.42719 4.43587) rotate(92.2906) scale(18.9902 40.4451)'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'color': '#35C1F1'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.1',
-      'color': '#34C1ED'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.2',
-      'color': '#2FC2DF'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.3',
-      'color': '#2BC3D2'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '0.7',
-      'color': '#36C752'
-    }
-  },
-  {
-    'tag': 'radialGradient',
-    'props': {
-      'id': 'paint5_radial_8_12',
-      'cx': '0',
-      'cy': '0',
-      'r': '1',
-      'gradientUnits': 'userSpaceOnUse',
-      'gradientTransform': 'translate(22.5056 7.24687) rotate(73.7398) scale(9.12187 7.41791)'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'color': '#66EB6E'
-    }
-  },
-  {
-    'tag': 'stop',
-    'props': {
-      'offset': '1',
-      'color': '#66EB6E',
-      'opacity': '0'
-    }
-  },
-  {
-    'tag': 'clipPath',
-    'props': {
-      'id': 'clip0_8_12'
-    }
-  },
-  {
-    'tag': 'rect',
-    'props': {
-      'width': '24',
-      'height': '24',
-      'fill': 'white'
-    }
-  }
-],
-              props,
-              attrs
-            );
-        },
-      });
+});
