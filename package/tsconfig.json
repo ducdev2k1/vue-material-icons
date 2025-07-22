@@ -1,6 +1,6 @@
 {
   "include": ["src/**/*", "src/**/*.tsx"],
-  "exclude": ["dist", "node_modules", "cypress", "src/__tests__/*", "src/env.d.ts"],
+  "exclude": ["dist", "node_modules", "cypress", "src/__tests__/*"],
 
   "compilerOptions": {
     "target": "ESNext",

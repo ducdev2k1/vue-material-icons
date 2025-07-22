@@ -7,10 +7,7 @@ export default defineConfig({
   base: '/',
   resolve: {
     alias: {
-      '@': '/src',
+      '@': 'src',
     },
-  },
-  server: {
-    port: 5174,
   },
 });
