@@ -13,7 +13,6 @@
 
 <script lang="ts" setup>
   import type { CSSProperties } from 'vue';
-  import { RouterView } from 'vue-router';
   const headerStyle: CSSProperties = {
     textAlign: 'center',
     color: '#fff',

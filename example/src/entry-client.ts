@@ -1,12 +1,14 @@
-import { createApp } from './main';
-import { registerPlugins } from './plugins';
+// import { createApp } from './main';
+// import { registerPlugins } from './plugins';
 
 // stype
+
 import 'ant-design-vue/dist/reset.css';
+import { createApp } from './main';
 
-const { app } = createApp();
+const { app, router } = createApp();
 
-// use plugins
-registerPlugins(app);
-
-app.mount('#app');
+// render the app into a div
+router.isReady().then(() => {
+  app.mount('#app');
+});

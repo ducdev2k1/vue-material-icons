@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createMemoryHistory, createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
   {
@@ -8,30 +8,15 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: import.meta.env.SSR ? createMemoryHistory() : createWebHistory(),
   routes,
-});
-
-// Workaround for https://github.com/vitejs/vite/issues/11804
-router.onError((err, to) => {
-  if (err?.message?.includes?.('Failed to fetch dynamically imported module')) {
-    if (!localStorage.getItem('vuetify:dynamic-reload')) {
-      console.log('Reloading page to fix dynamic import error');
-      localStorage.setItem('vuetify:dynamic-reload', 'true');
-      location.assign(to.fullPath);
-    } else {
-      console.error('Dynamic import error, reloading page did not fix it', err);
-    }
-  } else {
-    console.error(err);
-  }
-});
-
-router.isReady().then(() => {
-  localStorage.removeItem('vuetify:dynamic-reload');
+  scrollBehavior(_to, _from, savedPosition) {
+    return savedPosition || { left: 0, top: 0 };
+  },
 });
 
 router.beforeEach(async (to, from, next) => {
+  // Allow normal navigation
   next();
 });
 
