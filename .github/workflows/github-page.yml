@@ -30,7 +30,7 @@ jobs:
         run: |
           cd example
           npm install -g pnpm
-          pnpm ci
+          pnpm install
 
       - name: Build Vue app
         run: |
