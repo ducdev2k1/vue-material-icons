@@ -2,10 +2,9 @@ import express from 'express';
 import fs from 'node:fs/promises';
 
 // Constants
-console.log('process.env :>> ', process.env);
 const isProduction = process.env.NODE_ENV === 'production'
-const port = process.env.PORT || 5173
-const base = process.env.BASE || '/'
+const port = process.env.VITE_PORT || 5173
+const base = process.env.VITE_PORT || '/'
 
 // Cached production assets
 const templateHtml = isProduction

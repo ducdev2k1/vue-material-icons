@@ -13,12 +13,17 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^6.0.8",
+    "ant-design-vue": "^4.2.6",
     "express": "^5.1.0",
-    "vue": "^3.5.17"
+    "unplugin-vue-components": "^28.8.0",
+    "vue": "^3.5.17",
+    "vue-i18n": "^11.1.10",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.3",
     "@ducdev2k1/vue-material-icons": "^1.0.93",
+    "@types/express": "^5.0.3",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vue/tsconfig": "^0.7.0",
     "typescript": "~5.8.3",
