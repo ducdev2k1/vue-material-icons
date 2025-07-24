@@ -26,6 +26,7 @@ if (!isProduction) {
   })
   app.use(vite.middlewares)
 } else {
+  templateHtml = await fs.readFile('./dist/client/index.html', 'utf-8');
   const compression = (await import('compression')).default
   const sirv = (await import('sirv')).default
   app.use(compression())
