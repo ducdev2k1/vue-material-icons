@@ -1,10 +1,14 @@
 {
-    "outputDirectory": "dist",
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/"
-        }
-    ],
-    "trailingSlash": true
+  "builds": [
+    {
+      "src": "dist/server/entry-server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/server/entry-server.js"
+    }
+  ]
 }
