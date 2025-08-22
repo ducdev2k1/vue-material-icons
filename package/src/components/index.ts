@@ -2206,3 +2206,4 @@ export * from './ZoomOutMap';
 export * from './Office';
 export * from './Cpu';
 export * from './Browser';
+export * from './Os';
