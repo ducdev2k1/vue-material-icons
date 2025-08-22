@@ -2202,3 +2202,7 @@ export * from './ZoomIn';
 export * from './ZoomInMap';
 export * from './ZoomOut';
 export * from './ZoomOutMap';
+// custom
+export * from './Office';
+export * from './Cpu';
+export * from './Browser';
