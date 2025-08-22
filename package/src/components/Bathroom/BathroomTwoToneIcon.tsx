@@ -20,6 +20,66 @@ export default defineComponent({
               opacity: '.3',
             },
           },
+          {
+            tag: 'circle',
+            props: {
+              cx: '15',
+              cy: '14',
+              r: '1',
+            },
+          },
+          {
+            tag: 'circle',
+            props: {
+              cx: '12',
+              cy: '14',
+              r: '1',
+            },
+          },
+          {
+            tag: 'circle',
+            props: {
+              cx: '15',
+              cy: '17',
+              r: '1',
+            },
+          },
+          {
+            tag: 'path',
+            props: {
+              d: 'M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 18H4V4h16z',
+            },
+          },
+          {
+            tag: 'path',
+            props: {
+              d: 'M17 11c0-2.76-2.24-5-5-5s-5 2.24-5 5v1h10zm-8.46-.5c.24-1.69 1.7-3 3.46-3s3.22 1.31 3.47 3z',
+            },
+          },
+          {
+            tag: 'circle',
+            props: {
+              cx: '9',
+              cy: '17',
+              r: '1',
+            },
+          },
+          {
+            tag: 'circle',
+            props: {
+              cx: '9',
+              cy: '14',
+              r: '1',
+            },
+          },
+          {
+            tag: 'circle',
+            props: {
+              cx: '12',
+              cy: '17',
+              r: '1',
+            },
+          },
         ],
         props,
         attrs,

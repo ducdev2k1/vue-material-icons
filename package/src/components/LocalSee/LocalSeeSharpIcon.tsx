@@ -21,6 +21,12 @@ export default defineComponent({
               r: '3.2',
             },
           },
+          {
+            tag: 'path',
+            props: {
+              d: 'M22 4h-5.17L15 2H9L7.17 4H2v16h20zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5',
+            },
+          },
         ],
         props,
         attrs,

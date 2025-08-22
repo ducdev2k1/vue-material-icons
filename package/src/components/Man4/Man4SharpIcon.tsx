@@ -19,6 +19,14 @@ export default defineComponent({
               d: 'M7.96 7 10 22h4l2.04-15z',
             },
           },
+          {
+            tag: 'circle',
+            props: {
+              cx: '12',
+              cy: '4',
+              r: '2',
+            },
+          },
         ],
         props,
         attrs,

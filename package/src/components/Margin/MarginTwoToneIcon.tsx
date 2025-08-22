@@ -20,6 +20,24 @@ export default defineComponent({
               opacity: '.3',
             },
           },
+          {
+            tag: 'path',
+            props: {
+              d: 'M7 7h2v2H7zm0 4h2v2H7z',
+            },
+          },
+          {
+            tag: 'path',
+            props: {
+              d: 'M3 3v18h18V3zm16 16H5V5h14z',
+            },
+          },
+          {
+            tag: 'path',
+            props: {
+              d: 'M11 7h2v2h-2zm4 4h2v2h-2zm-4 0h2v2h-2zm4-4h2v2h-2z',
+            },
+          },
         ],
         props,
         attrs,

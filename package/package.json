@@ -1,7 +1,7 @@
 {
   "name": "@ducdev2k1/vue-material-icons",
   "description": "A lightweight Vue 3 icon library with 2000+ Material Icons rendered as inline SVG components. Includes full TypeScript support, auto-import capability, and optimized tree-shaking for fast and scalable development.",
-  "version": "1.0.93",
+  "version": "1.0.94",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/types/index.d.ts",
@@ -41,7 +41,11 @@
     "vite": "^7.0.4",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4",
-    "vue-tsc": "^2.2.12"
+    "vue-tsc": "^2.2.12",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.1",
+    "@mui/material": "^7.3.1"
   },
   "files": [
     "dist",

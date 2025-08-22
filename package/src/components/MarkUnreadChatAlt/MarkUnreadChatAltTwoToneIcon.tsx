@@ -20,6 +20,26 @@ export default defineComponent({
               opacity: '.3',
             },
           },
+          {
+            tag: 'circle',
+            props: {
+              cx: '19',
+              cy: '3',
+              r: '3',
+            },
+          },
+          {
+            tag: 'path',
+            props: {
+              d: 'M20 16H5.17L4 17.17V4h10.1c-.18-.89-.08-1.61 0-2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V6.97c-.58.44-1.26.77-2 .92z',
+            },
+          },
+          {
+            tag: 'path',
+            props: {
+              d: 'M6 12h8v2H6zm0-3h12v2H6zm0-1h12v-.1c-1.21-.25-2.25-.95-2.97-1.9H6z',
+            },
+          },
         ],
         props,
         attrs,

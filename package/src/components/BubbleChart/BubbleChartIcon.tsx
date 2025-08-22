@@ -21,6 +21,22 @@ export default defineComponent({
               r: '3.2',
             },
           },
+          {
+            tag: 'circle',
+            props: {
+              cx: '14.8',
+              cy: '18',
+              r: '2',
+            },
+          },
+          {
+            tag: 'circle',
+            props: {
+              cx: '15.2',
+              cy: '8.8',
+              r: '4.8',
+            },
+          },
         ],
         props,
         attrs,

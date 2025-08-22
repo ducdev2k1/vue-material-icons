@@ -1,5 +1,5 @@
-export { default as ThumbDownTwoToneIcon } from './ThumbDownTwoToneIcon';
-export { default as ThumbDownSharpIcon } from './ThumbDownSharpIcon';
-export { default as ThumbDownRoundedIcon } from './ThumbDownRoundedIcon';
-export { default as ThumbDownOutlinedIcon } from './ThumbDownOutlinedIcon';
 export { default as ThumbDownIcon } from './ThumbDownIcon';
+export { default as ThumbDownOutlinedIcon } from './ThumbDownOutlinedIcon';
+export { default as ThumbDownRoundedIcon } from './ThumbDownRoundedIcon';
+export { default as ThumbDownSharpIcon } from './ThumbDownSharpIcon';
+export { default as ThumbDownTwoToneIcon } from './ThumbDownTwoToneIcon';

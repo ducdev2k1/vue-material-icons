@@ -20,6 +20,36 @@ export default defineComponent({
               opacity: '.3',
             },
           },
+          {
+            tag: 'circle',
+            props: {
+              cx: '8',
+              cy: '8',
+              r: '1',
+            },
+          },
+          {
+            tag: 'path',
+            props: {
+              d: 'M15 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V9zm4 16H5V5h9v5h5z',
+            },
+          },
+          {
+            tag: 'circle',
+            props: {
+              cx: '8',
+              cy: '12',
+              r: '1',
+            },
+          },
+          {
+            tag: 'circle',
+            props: {
+              cx: '8',
+              cy: '16',
+              r: '1',
+            },
+          },
         ],
         props,
         attrs,
