@@ -1,14 +1,18 @@
 import express from 'express';
-import fs from 'node:fs/promises';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+
 
 // Constants
 const isProduction = process.env.NODE_ENV === 'production'
-const port = process.env.VITE_PORT || 5173
+const port = process.env.VITE_PORT || 5174
 const base = process.env.VITE_PORT || '/'
 
 
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const resolve = (p) => path.resolve(__dirname, p);
 
 
