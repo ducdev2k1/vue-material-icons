@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node server",
+    "build-vite": "vite build",
     "build": "pnpm run build:client && pnpm run build:server",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server",

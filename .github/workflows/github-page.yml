@@ -35,12 +35,12 @@ jobs:
       - name: Build Vue app
         run: |
           cd example
-          pnpm run build
+          pnpm run build-vite
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: example/dist/client
+          path: example/dist
 
   deploy:
     environment:
