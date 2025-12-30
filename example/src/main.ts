@@ -1,8 +1,9 @@
 import { createSSRApp } from 'vue';
 import App from './App.vue';
 import { registerPlugins } from './plugins';
-import router from './router';
 import i18n from './plugins/i18n';
+import router from './router';
+import './style.css';
 
 // SSR requires a fresh app instance per request, therefore we export a function
 // that creates a fresh app instance. If using Vuex, we'd also be creating a

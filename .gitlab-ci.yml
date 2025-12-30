@@ -1,0 +1,47 @@
+# GitLab CI/CD Pipeline cho vue-material-icons
+# ============================================
+
+# Include CI config cho example
+include:
+  - local: "/ci/example.yml"
+
+stages:
+  - install
+  - build
+  - deploy
+
+variables:
+  PNPM_STORE: .pnpm-store
+  NODE_VERSION: "20"
+
+# ============================================
+# EXAMPLE JOBS (extend từ ci/example.yml)
+# ============================================
+
+# Install dependencies
+example:install:
+  extends: .example:install
+
+# Build
+example:build:
+  extends: .example:build
+  needs:
+    - example:install
+
+# Deploy Staging (auto khi push develop)
+example:deploy:staging:
+  extends: .example:deploy:staging
+  needs:
+    - example:build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "develop"
+      when: on_success
+
+# Deploy Production (manual khi push main)
+example:deploy:production:
+  extends: .example:deploy:production
+  needs:
+    - example:build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+      when: manual

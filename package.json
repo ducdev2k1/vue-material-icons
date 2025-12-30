@@ -11,7 +11,8 @@
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
-    "example": "cd example && pnpm run dev"
+    "example": "cd example && pnpm run dev",
+    "example:build": "cd example && pnpm run build"
   },
   "dependencies": {
     "vue": "^3.5.17"
